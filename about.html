@@ -7,10 +7,10 @@
 
 <style>
 :root{
-  --bg:#000;
-  --card:#111;
+  --bg:#121212;
+  --card:#1c1c1c;
   --accent:#1db954;
-  --text:#fff;
+  --text:#ffffff;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -20,27 +20,20 @@ body{
   background:var(--bg);
   color:var(--text);
   opacity:0;
-  transition:opacity 0.8s ease-in-out;
+  transition:opacity 0.4s ease-in-out;
 }
 
-/* NAV */
 nav{
-  position:sticky;
-  top:0;
-  background:#0c0c0c;
+  background:#0f0f0f;
   display:flex;
   justify-content:center;
   gap:24px;
   padding:16px;
 }
-nav a{
-  color:var(--text);
-  text-decoration:none;
-  font-weight:bold;
-}
+
+nav a{color:var(--text);text-decoration:none;font-weight:bold;}
 nav a:hover{color:var(--accent);}
 
-/* CONTENT */
 .container{
   max-width:900px;
   margin:auto;
@@ -48,22 +41,11 @@ nav a:hover{color:var(--accent);}
   text-align:center;
 }
 
-h1{margin-bottom:30px;}
-
 .card{
   background:var(--card);
-  padding:30px;
+  padding:32px;
   border-radius:18px;
   line-height:1.8;
-  animation:fadeUp 1s ease;
-}
-
-.card h2{margin-bottom:15px;color:var(--accent);}
-.card p{opacity:0.9;}
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
 }
 </style>
 </head>
@@ -82,37 +64,16 @@ h1{margin-bottom:30px;}
   <h1>About Muzik Trixx</h1>
 
   <div class="card">
-    <h2>MUZIK €MPIRE</h2>
     <p>
-      Muzik Trixx is an Afro music artist driven by real-life stories, love,
-      hustle, and gratitude. Under the MUZIK €MPIRE brand, his sound blends
-      smooth Afro rhythms with honest lyrics that reflect everyday struggles
-      and victories.
-    </p>
-    <p>
-      From the streets to the studio, Muzik Trixx represents growth, focus,
-      and belief — turning pain into purpose and music into legacy.
+      Muzik Trixx is an Afro music artist under the MUZIK €MPIRE brand,
+      inspired by real life, hustle, love, and gratitude.
+      His sound blends Afro rhythms with meaningful lyrics.
     </p>
   </div>
 </div>
 
 <script>
-/* FADE PAGE TRANSITION */
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
-
-const links = document.querySelectorAll('nav a');
-links.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const href = link.getAttribute('href');
-    document.body.classList.remove('loaded');
-    setTimeout(() => {
-      window.location = href;
-    }, 400);
-  });
-});
+window.addEventListener('load',()=>document.body.style.opacity=1);
 </script>
 
 </body>
