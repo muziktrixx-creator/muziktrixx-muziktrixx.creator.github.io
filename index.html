@@ -3,71 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Music | Muzik €mpire</title>
+<title>Muzik €mpire | Muzik Trixx</title>
+
 <style>
-:root{
-  --bg:#f0f8ff;
-  --card:#ffffff;
-  --accent:#ff6f61;
-  --text:#222;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
-
-nav{
-  background:#fff;
-  display:flex;
-  justify-content:center;
-  gap:24px;
-  padding:16px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.08);
-  position:sticky; top:0; z-index:100;
-}
-nav a{text-decoration:none;font-weight:bold;color:#333;}
-nav a:hover{color:var(--accent);}
-
-.container{max-width:1100px;margin:auto;padding:60px 20px;text-align:center;}
-h1{margin-bottom:40px;font-size:2.5rem;color:#444;}
-
-.music-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.song{
-  background:var(--card);
-  padding:20px;
-  border-radius:20px;
-  transition:0.3s;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-.song:hover{
-  transform:translateY(-6px);
-  background:var(--accent);
-  color:#fff;
-}
-.song h3{margin-bottom:10px;}
-.song p{margin-bottom:12px;}
-.song a{text-decoration:none;color:var(--accent);font-weight:bold;}
-.song:hover a{color:#fff;}
-</style>
-  <style>
-body{
+/* RESET */
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* BACKGROUND IMAGE */
+body{
   font-family:Arial, sans-serif;
   background:url("IMG-20250425-WA0035.jpg") no-repeat center center fixed;
   background-size:cover;
 }
 
-/* DARK OVERLAY FOR READABILITY */
+/* NAVIGATION */
+nav{
+  background:rgba(255,255,255,0.9);
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  padding:16px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.15);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+nav a{
+  text-decoration:none;
+  font-weight:bold;
+  color:#333;
+}
+
+nav a:hover{
+  color:#ff6f61;
+}
+
+/* OVERLAY */
 .overlay{
-  background:rgba(0,0,0,0.55);
+  background:rgba(0,0,0,0.6);
   min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
   color:#fff;
 }
-  </style>
+
+/* HERO CONTENT */
+.hero{
+  max-width:800px;
+  padding:40px;
+  animation:fadeIn 1.2s ease;
+}
+
+.hero h1{
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:1.3rem;
+  margin-bottom:30px;
+}
+
+/* BUTTONS */
+.hero a{
+  display:inline-block;
+  padding:14px 30px;
+  background:#ff6f61;
+  color:#fff;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  margin:10px;
+  transition:0.3s;
+}
+
+.hero a:hover{
+  background:#ffcc70;
+  color:#000;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{font-size:2.2rem;}
+  .hero p{font-size:1.1rem;}
+}
+</style>
 </head>
 
 <body>
@@ -76,27 +109,19 @@ body{
   <a href="index.html">Home</a>
   <a href="music.html">Music</a>
   <a href="news.html">News</a>
-  <a href="about.html">About</a>
+  <a href="about.html">Bio</a>
+  <a href="gallery.html">Gallery</a>
   <a href="contact.html">Contact</a>
 </nav>
-<a href="media.html">Media</a>
-<div class="container">
-<h1>🎵 Music</h1>
 
-<div class="music-grid">
-  <div class="song">
-    <h3>Girl I’m Blessed</h3>
-    <p>Afro love song celebrating gratitude and real love.</p>
-    <a href="#">Listen</a>
+<div class="overlay">
+  <div class="hero">
+    <h1>Welcome to MUZIK €MPIRE</h1>
+    <p>Home of Afro vibes, real stories, and unstoppable hustle.</p>
+
+    <a href="music.html">🎵 Listen to Music</a>
+    <a href="gallery.html">📸 View Gallery</a>
   </div>
-
-  <div class="song">
-    <h3>Next Hit Song</h3>
-    <p>Coming soon — stay tuned for fresh vibes!</p>
-    <a href="#">Preview</a>
-  </div>
-
-</div>
 </div>
 
 </body>
