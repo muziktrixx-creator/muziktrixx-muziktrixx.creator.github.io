@@ -3,92 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MUZIK €MPIRE</title>
-
+<title>Music | Muzik €mpire</title>
 <style>
 :root{
-  --bg:#121212;       /* dark but readable */
-  --card:#1c1c1c;     /* slightly lighter dark cards */
-  --accent:#1db954;   /* green accent */
-  --text:#ffffff;      /* full white text */
+  --bg:#f0f8ff;
+  --card:#ffffff;
+  --accent:#ff6f61;
+  --text:#222;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
 
-body{
-  font-family:Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-  opacity:0;
-  transition:opacity 0.4s ease-in-out;
-}
-
-/* NAVIGATION */
 nav{
-  position:sticky;
-  top:0;
-  background:#0f0f0f;
+  background:#fff;
   display:flex;
   justify-content:center;
   gap:24px;
   padding:16px;
-  z-index:100;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  position:sticky; top:0; z-index:100;
 }
-nav a{
-  color:var(--text);
-  text-decoration:none;
-  font-weight:bold;
-  transition:0.3s;
-}
-nav a:hover{
-  color:var(--accent);
-}
+nav a{text-decoration:none;font-weight:bold;color:#333;}
+nav a:hover{color:var(--accent);}
 
-/* HERO SECTION */
-.hero{
-  min-height:90vh;
+.container{max-width:1100px;margin:auto;padding:60px 20px;text-align:center;}
+h1{margin-bottom:40px;font-size:2.5rem;color:#444;}
+
+.music-grid{
   display:grid;
-  place-items:center;
-  text-align:center;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.song{
+  background:var(--card);
   padding:20px;
-  animation:fadeUp 1.2s ease;
-}
-.hero img{
-  width:160px;
-  max-width:60%;
-}
-.release{
-  display:inline-block;
-  margin:20px 0;
-  padding:10px 24px;
-  background:var(--accent);
-  color:#000;
-  border-radius:30px;
-  font-weight:bold;
-  cursor:pointer;
+  border-radius:20px;
   transition:0.3s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
-.release:hover{
-  transform:scale(1.05);
+.song:hover{
+  transform:translateY(-6px);
+  background:var(--accent);
+  color:#fff;
 }
-.hero h1{
-  font-size:clamp(28px,5vw,42px);
-}
-.hero p{
-  opacity:1;
-}
-
-/* ANIMATION */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(40px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  nav{flex-wrap:wrap;}
-}
+.song h3{margin-bottom:10px;}
+.song p{margin-bottom:12px;}
+.song a{text-decoration:none;color:var(--accent);font-weight:bold;}
+.song:hover a{color:#fff;}
 </style>
 </head>
 
@@ -102,33 +65,24 @@ nav a:hover{
   <a href="contact.html">Contact</a>
 </nav>
 
-<section class="hero">
-  <div>
-    <img src="mt-logo.png" alt="MT Logo">
-    <div class="release">🎵 OUT NOW — Girl I’m Blessed</div>
-    <h1>MUZIK €MPIRE</h1>
-    <p>Official website of Afro artist Muzik Trixx</p>
+<div class="container">
+<h1>🎵 Music</h1>
+
+<div class="music-grid">
+  <div class="song">
+    <h3>Girl I’m Blessed</h3>
+    <p>Afro love song celebrating gratitude and real love.</p>
+    <a href="#">Listen</a>
   </div>
-</section>
 
-<script>
-/* FADE PAGE TRANSITION */
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
+  <div class="song">
+    <h3>Next Hit Song</h3>
+    <p>Coming soon — stay tuned for fresh vibes!</p>
+    <a href="#">Preview</a>
+  </div>
 
-const links = document.querySelectorAll('nav a');
-links.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const href = link.getAttribute('href');
-    document.body.classList.remove('loaded');
-    setTimeout(() => {
-      window.location = href;
-    }, 400);
-  });
-});
-</script>
+</div>
+</div>
 
 </body>
 </html>
