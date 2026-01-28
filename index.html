@@ -7,17 +7,13 @@
 
 <style>
 :root{
-  --bg:#000;
-  --card:#111;
-  --accent:#1db954;
-  --text:#fff;
+  --bg:#121212;       /* dark but readable */
+  --card:#1c1c1c;     /* slightly lighter dark cards */
+  --accent:#1db954;   /* green accent */
+  --text:#ffffff;      /* full white text */
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
   font-family:Arial, sans-serif;
@@ -25,14 +21,14 @@ body{
   color:var(--text);
   line-height:1.6;
   opacity:0;
-  transition:opacity 0.8s ease-in-out;
+  transition:opacity 0.4s ease-in-out;
 }
 
 /* NAVIGATION */
 nav{
   position:sticky;
   top:0;
-  background:#0c0c0c;
+  background:#0f0f0f;
   display:flex;
   justify-content:center;
   gap:24px;
@@ -80,7 +76,7 @@ nav a:hover{
   font-size:clamp(28px,5vw,42px);
 }
 .hero p{
-  opacity:0.8;
+  opacity:1;
 }
 
 /* ANIMATION */
