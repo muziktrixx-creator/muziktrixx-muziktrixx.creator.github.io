@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media | Muzik €mpire</title>
+<style>
+:root{
+  --bg:#fff0f5;
+  --card:#ffffff;
+  --accent:#ff4081;
+  --text:#222;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+
+nav{
+  background:#fff;
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  padding:16px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  position:sticky; top:0; z-index:100;
+}
+nav a{text-decoration:none;font-weight:bold;color:#333;}
+nav a:hover{color:var(--accent);}
+
+.container{max-width:1100px;margin:auto;padding:60px 20px;text-align:center;}
+h1{margin-bottom:40px;color:#444;}
+
+.media-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.media-card{
+  background:var(--card);
+  padding:15px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.media-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  background:var(--accent);
+  color:#fff;
+}
+
+.media-card img, .media-card video{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:10px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="music.html">Music</a>
+  <a href="news.html">News</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="media.html">Media</a>
+</nav>
+
+<div class="container">
+<h1>Photos & Videos</h1>
+
+<div class="media-grid">
+  <!-- Photo Example -->
+  <div class="media-card">
+    <img src="trixx-performance.jpg" alt="Live Performance">
+    <p>Live on stage - electrifying the crowd!</p>
+  </div>
+
+  <!-- Video Example -->
+  <div class="media-card">
+    <video controls>
+      <source src="trixx-music-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p>"Girl I’m Blessed" Official Music Video</p>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
