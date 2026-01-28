@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUZIK €MPIRE</title>
+
+<style>
+:root{
+  --bg:#000;
+  --card:#111;
+  --accent:#1db954;
+  --text:#fff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  background:#0c0c0c;
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  padding:16px;
+  z-index:100;
+}
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+nav a:hover{
+  color:var(--accent);
+}
+
+/* HERO */
+.hero{
+  min-height:90vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:20px;
+  animation:fadeUp 1.2s ease;
+}
+.hero img{
+  width:160px;
+  max-width:60%;
+}
+.release{
+  display:inline-block;
+  margin:20px 0;
+  padding:10px 24px;
+  background:var(--accent);
+  color:#000;
+  border-radius:30px;
+  font-weight:bold;
+}
+.hero h1{
+  font-size:clamp(28px,5vw,42px);
+}
+.hero p{
+  opacity:0.8;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{flex-wrap:wrap;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="music.html">Music</a>
+  <a href="news.html">News</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <img src="mt-logo.png" alt="MT Logo">
+    <div class="release">🎵 OUT NOW — Girl I’m Blessed</div>
+    <h1>MUZIK €MPIRE</h1>
+    <p>Official website of Afro artist Muzik Trixx</p>
+  </div>
+</section>
+
+</body>
+  </html>
