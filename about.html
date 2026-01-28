@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | MUZIK €MPIRE</title>
+
+<style>
+:root{
+  --bg:#000;
+  --card:#111;
+  --accent:#1db954;
+  --text:#fff;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  background:#0c0c0c;
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  padding:16px;
+}
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:bold;
+}
+nav a:hover{color:var(--accent);}
+
+/* CONTENT */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+h1{text-align:center;margin-bottom:30px;}
+
+.card{
+  background:var(--card);
+  padding:30px;
+  border-radius:18px;
+  line-height:1.8;
+  animation:fadeUp 1s ease;
+}
+
+.card h2{margin-bottom:15px;color:var(--accent);}
+.card p{opacity:0.9;}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="music.html">Music</a>
+  <a href="news.html">News</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+  <h1>About Muzik Trixx</h1>
+
+  <div class="card">
+    <h2>MUZIK €MPIRE</h2>
+    <p>
+      Muzik Trixx is an Afro music artist driven by real-life stories, love,
+      hustle, and gratitude. Under the MUZIK €MPIRE brand, his sound blends
+      smooth Afro rhythms with honest lyrics that reflect everyday struggles
+      and victories.
+    </p>
+    <p>
+      From the streets to the studio, Muzik Trixx represents growth, focus,
+      and belief — turning pain into purpose and music into legacy.
+    </p>
+  </div>
+</div>
+
+</body>
+  </html>
