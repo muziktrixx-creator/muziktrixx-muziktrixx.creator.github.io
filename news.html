@@ -3,51 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>News | MUZIK €MPIRE</title>
-
+<title>News | Muzik €mpire</title>
 <style>
 :root{
-  --bg:#121212;
-  --card:#1c1c1c;
-  --accent:#1db954;
-  --text:#ffffff;
+  --bg:#fff8f0;
+  --card:#ffffff;
+  --accent:#f39c12;
+  --text:#222;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-  font-family:Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  opacity:0;
-  transition:opacity 0.4s ease-in-out;
-}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
 
 nav{
-  background:#0f0f0f;
+  background:#fff;
   display:flex;
   justify-content:center;
   gap:24px;
   padding:16px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  position:sticky; top:0; z-index:100;
 }
-
-nav a{color:var(--text);text-decoration:none;font-weight:bold;}
+nav a{text-decoration:none;font-weight:bold;color:#333;}
 nav a:hover{color:var(--accent);}
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:60px 20px;
-}
+.container{max-width:1000px;margin:auto;padding:60px 20px;}
+h1{text-align:center;margin-bottom:40px;color:#444;}
 
 .news-card{
   background:var(--card);
   padding:24px;
-  border-radius:18px;
+  border-radius:20px;
   margin-bottom:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  transition:0.3s;
 }
-
+.news-card:hover{transform:translateY(-5px);background:var(--accent);color:#fff;}
 .news-card h3{margin-bottom:10px;}
+.news-card p{opacity:0.9;}
+.news-card:hover p{opacity:1;}
 </style>
 </head>
 
@@ -62,22 +56,19 @@ nav a:hover{color:var(--accent);}
 </nav>
 
 <div class="container">
-  <h1>📰 Entertainment News</h1>
+<h1>📰 Music & Entertainment News</h1>
 
-  <div class="news-card">
-    <h3>New Release</h3>
-    <p>“Girl I’m Blessed” by Muzik Trixx is officially out worldwide.</p>
-  </div>
-
-  <div class="news-card">
-    <h3>Studio Update</h3>
-    <p>More Afro vibes loading. Stay connected.</p>
-  </div>
+<div class="news-card">
+  <h3>New Release</h3>
+  <p>"Girl I’m Blessed" is officially out! Fans worldwide are loving it.</p>
 </div>
 
-<script>
-window.addEventListener('load',()=>document.body.style.opacity=1);
-</script>
+<div class="news-card">
+  <h3>Studio Update</h3>
+  <p>Next Afro vibes coming soon — stay tuned!</p>
+</div>
+
+</div>
 
 </body>
 </html>
