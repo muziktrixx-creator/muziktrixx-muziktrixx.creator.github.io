@@ -3,50 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | MUZIK €MPIRE</title>
-
+<title>About | Muzik €mpire</title>
 <style>
 :root{
-  --bg:#121212;
-  --card:#1c1c1c;
-  --accent:#1db954;
-  --text:#ffffff;
+  --bg:#e0f7fa;
+  --card:#ffffff;
+  --accent:#00bcd4;
+  --text:#222;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-  font-family:Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  opacity:0;
-  transition:opacity 0.4s ease-in-out;
-}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
 
 nav{
-  background:#0f0f0f;
+  background:#fff;
   display:flex;
   justify-content:center;
   gap:24px;
   padding:16px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  position:sticky; top:0; z-index:100;
 }
-
-nav a{color:var(--text);text-decoration:none;font-weight:bold;}
+nav a{text-decoration:none;font-weight:bold;color:#333;}
 nav a:hover{color:var(--accent);}
 
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:60px 20px;
-  text-align:center;
-}
+.container{max-width:900px;margin:auto;padding:60px 20px;text-align:center;}
 
 .card{
   background:var(--card);
-  padding:32px;
-  border-radius:18px;
-  line-height:1.8;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
 }
+.card h2{color:var(--accent);margin-bottom:15px;}
+.card p{font-size:18px;}
 </style>
 </head>
 
@@ -61,20 +51,13 @@ nav a:hover{color:var(--accent);}
 </nav>
 
 <div class="container">
-  <h1>About Muzik Trixx</h1>
+<h1>About Muzik Trixx</h1>
 
-  <div class="card">
-    <p>
-      Muzik Trixx is an Afro music artist under the MUZIK €MPIRE brand,
-      inspired by real life, hustle, love, and gratitude.
-      His sound blends Afro rhythms with meaningful lyrics.
-    </p>
-  </div>
+<div class="card">
+<h2>MUZIK €MPIRE</h2>
+<p>Muzik Trixx is an Afro artist inspired by real-life stories, love, and hustle. Under MUZIK €MPIRE, his music blends smooth Afro rhythms with honest lyrics reflecting growth, gratitude, and victories.</p>
 </div>
-
-<script>
-window.addEventListener('load',()=>document.body.style.opacity=1);
-</script>
+</div>
 
 </body>
 </html>
