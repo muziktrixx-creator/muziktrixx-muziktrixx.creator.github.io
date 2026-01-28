@@ -6,123 +6,180 @@
 <title>Muzik €mpire | Muzik Trixx</title>
 
 <style>
-/* RESET */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
-/* BACKGROUND IMAGE */
 body{
-  font-family:Arial, sans-serif;
-  background:url("IMG-20250425-WA0035.jpg") no-repeat center center fixed;
-  background-size:cover;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-/* NAVIGATION */
+/* ===== BACKGROUND SLIDER ===== */
+.slider{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  z-index:-2;
+}
+
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  animation:slideShow 24s infinite;
+}
+
+.slide:nth-child(1){
+  background-image:url("photo1.jpg");
+  animation-delay:0s;
+}
+.slide:nth-child(2){
+  background-image:url("photo2.jpg");
+  animation-delay:6s;
+}
+.slide:nth-child(3){
+  background-image:url("photo3.jpg");
+  animation-delay:12s;
+}
+.slide:nth-child(4){
+  background-image:url("photo4.jpg");
+  animation-delay:18s;
+}
+
+@keyframes slideShow{
+  0%{opacity:0;}
+  10%{opacity:1;}
+  30%{opacity:1;}
+  40%{opacity:0;}
+}
+
+/* ===== OVERLAY ===== */
+.overlay{
+  background:rgba(0,0,0,0.6);
+  min-height:100vh;
+  z-index:-1;
+}
+
+/* ===== NAV BAR ===== */
 nav{
-  background:rgba(255,255,255,0.9);
+  background:rgba(255,255,255,0.95);
+  padding:16px;
   display:flex;
   justify-content:center;
   gap:22px;
-  padding:16px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.15);
   position:sticky;
   top:0;
-  z-index:100;
 }
 
 nav a{
   text-decoration:none;
-  font-weight:bold;
   color:#333;
+  font-weight:bold;
 }
 
 nav a:hover{
   color:#ff6f61;
 }
 
-/* OVERLAY */
-.overlay{
-  background:rgba(0,0,0,0.6);
-  min-height:100vh;
+/* ===== HERO SECTION ===== */
+.hero{
+  min-height:calc(100vh - 70px);
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  color:#fff;
+  color:white;
+  padding:20px;
 }
 
-/* HERO CONTENT */
-.hero{
+.hero-box{
   max-width:800px;
-  padding:40px;
-  animation:fadeIn 1.2s ease;
 }
 
 .hero h1{
   font-size:3rem;
-  margin-bottom:20px;
+  margin-bottom:15px;
+}
+
+.hero h1 span{
+  color:#ff6f61;
 }
 
 .hero p{
-  font-size:1.3rem;
+  font-size:1.2rem;
   margin-bottom:30px;
 }
 
-/* BUTTONS */
 .hero a{
   display:inline-block;
   padding:14px 30px;
+  margin:10px;
   background:#ff6f61;
-  color:#fff;
+  color:white;
   border-radius:30px;
   text-decoration:none;
   font-weight:bold;
-  margin:10px;
-  transition:0.3s;
 }
 
-.hero a:hover{
-  background:#ffcc70;
-  color:#000;
+.hero a.secondary{
+  background:#1db954;
 }
 
-/* ANIMATION */
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(30px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-/* RESPONSIVE */
+/* ===== MOBILE ===== */
 @media(max-width:768px){
-  .hero h1{font-size:2.2rem;}
-  .hero p{font-size:1.1rem;}
+  .hero h1{
+    font-size:2.2rem;
+  }
+  .hero p{
+    font-size:1rem;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- BACKGROUND SLIDER -->
+<div class="slider">
+  <div class="slide"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+</div>
+
+<div class="overlay">
+
+<!-- NAVIGATION -->
 <nav>
   <a href="index.html">Home</a>
   <a href="music.html">Music</a>
-  <a href="news.html">News</a>
-  <a href="about.html">Bio</a>
+  <a href="bio.html">Bio</a>
   <a href="gallery.html">Gallery</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-<div class="overlay">
-  <div class="hero">
-    <h1>Welcome to MUZIK €MPIRE</h1>
-    <p>Home of Afro vibes, real stories, and unstoppable hustle.</p>
+<!-- HERO CONTENT -->
+<section class="hero">
+  <div class="hero-box">
+    <h1>Welcome to <span>Muzik €mpire</span></h1>
+    <p>
+      Official home of <b>Muzik Trixx</b> — Afro vibes, real stories, and pure energy.
+      Where hustle meets melody and music speaks life.
+    </p>
 
-    <a href="music.html">🎵 Listen to Music</a>
-    <a href="gallery.html">📸 View Gallery</a>
+    <a href="music.html">🎵 Listen Now</a>
+    <a href="gallery.html" class="secondary">📸 View Gallery</a>
   </div>
+</section>
+
 </div>
 
 </body>
-</html>
+  </html>
