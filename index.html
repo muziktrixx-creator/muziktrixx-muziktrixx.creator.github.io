@@ -5,7 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MUZIK €MPIRE</title>
 /* PAGE FADE */
-body{
+<script>
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+});
+
+const links = document.querySelectorAll('nav a');
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const href = link.getAttribute('href');
+    document.body.classList.remove('loaded');
+    setTimeout(() => {
+      window.location = href;
+    }, 400);
+  });
+});
+    </script>
+  body{
   opacity:0;
   transition:opacity 0.8s ease-in-out;
 }
