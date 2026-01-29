@@ -3,171 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Music | Muzik €mpire</title>
+<title>Music | Muzik Trixx</title>
 
 <style>
-:root{
-  --bg:#f0f8ff;           /* light blue background */
-  --card:#ffffff;          /* card background */
-  --accent:#ff6f61;        /* hover gradient color */
-  --text:#222;             /* main text */
-}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
 body{
-  font-family:Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f4f6f8;
+  color:#222;
 }
 
-/* NAVIGATION */
+/* NAV BAR */
 nav{
-  background:#fff;
+  background:#ffffff;
+  padding:16px;
   display:flex;
   justify-content:center;
-  gap:24px;
-  padding:16px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.08);
-  position:sticky; top:0; z-index:100;
+  gap:22px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
+
 nav a{
   text-decoration:none;
-  font-weight:bold;
   color:#333;
+  font-weight:bold;
 }
+
 nav a:hover{
-  color:var(--accent);
+  color:#ff6f61;
 }
 
 /* PAGE CONTAINER */
 .container{
-  max-width:1100px;
-  margin:auto;
-  padding:60px 20px;
-  text-align:center;
-}
-
-h1{
-  margin-bottom:40px;
-  font-size:2.5rem;
-  color:#444;
-}
-
-/* MUSIC GRID */
-.music-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.song{
-  background:var(--card);
+  max-width:900px;
+  margin:40px auto;
   padding:20px;
-  border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  transition:0.4s;
 }
 
-.song:hover{
-  transform:translateY(-10px) scale(1.03);
-  background:linear-gradient(135deg,#ff6f61,#ffcc70);
-  color:#fff;
+/* SONG CARD */
+.song-card{
+  background:#ffffff;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom:30px;
 }
 
-.song h3{
+.song-card h2{
   margin-bottom:10px;
+  color:#ff6f61;
 }
 
-.song p{
-  margin-bottom:12px;
+.song-card p{
+  margin-bottom:15px;
+  line-height:1.6;
 }
 
-.song a{
+/* AUDIO */
+audio{
+  width:100%;
+  margin:15px 0;
+}
+
+/* PAY BUTTON */
+.pay-btn{
+  display:inline-block;
+  padding:14px 28px;
+  background:#1db954;
+  color:white;
   text-decoration:none;
-  color:var(--accent);
+  border-radius:30px;
   font-weight:bold;
 }
 
-.song:hover a{
-  color:#fff;
+.pay-btn:hover{
+  background:#17a44b;
 }
 
-/* AUDIO PLAYER */
-audio{
-  width:100%;
-  border-radius:12px;
-  outline:none;
-  margin-top:10px;
-}
-
-/* SOCIAL MEDIA BUTTONS */
-.socials{
+/* FOOTER */
+footer{
   text-align:center;
-  margin:40px 0;
+  padding:20px;
+  color:#666;
+  font-size:14px;
 }
-.socials a{
-  margin:0 10px;
-  font-size:24px;
-  text-decoration:none;
+
+/* MOBILE */
+@media(max-width:600px){
+  .container{
+    margin:20px;
+  }
 }
-.socials a:hover{
-  transform:scale(1.2);
-  transition:0.3s;
-}
-.socials a.instagram{color:#E1306C;}
-.socials a.youtube{color:#FF0000;}
-.socials a.twitter{color:#1DA1F2;}
-.socials a.tiktok{color:#69C9D0;}
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
 <nav>
   <a href="index.html">Home</a>
   <a href="music.html">Music</a>
-  <a href="news.html">News</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
+  <a href="bio.html">Bio</a>
   <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
 </nav>
-<a href="media.html">Media</a>
+
+<!-- MAIN CONTENT -->
 <div class="container">
-  <h1>🎵 Music</h1>
 
-  <div class="music-grid">
-    <!-- Song 1 -->
-    <div class="song">
-      <h3>Trixx - Am Blesseed (Prod.By Jassie Jozzy)</h3>
-      <p>Afro love song celebrating gratitude and real love.</p>
-      <audio controls>
-        <source src="Trixx - Am Blesseed (Prod.By Jassie Jozzy).mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
+  <div class="song-card">
+    <h2>Am Blessed</h2>
+    <p>
+      <b>Artist:</b> Muzik Trixx<br>
+      <b>Producer:</b> Jassie Jozzy
+    </p>
 
-    <!-- Song 2 (Optional placeholder) -->
-    <div class="song">
-      <h3>Next Hit Song</h3>
-      <p>Coming soon — stay tuned for fresh vibes!</p>
-      <audio controls>
-        <source src="next-hit-song.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-  </div>
+    <p>
+      “Am Blessed” is an Afro-inspired song that reflects gratitude, survival,
+      and real-life growth. The song celebrates blessings despite the struggles
+      of life and the hustle.
+    </p>
 
-  <!-- SOCIAL MEDIA BUTTONS -->
-  <div class="socials">
-    <a href="https://instagram.com/muziktrixx" target="_blank" class="instagram">📸 Instagram</a>
-    <a href="https://youtube.com/@muziktrixx" target="_blank" class="youtube">🎥 YouTube</a>
-    <a href="https://twitter.com/muziktrixx" target="_blank" class="twitter">🐦 Twitter</a>
-    <a href="https://tiktok.com/@muziktrixx" target="_blank" class="tiktok">🎵 TikTok</a>
+    <!-- AUDIO PREVIEW -->
+    <audio controls>
+      <source src="am-blessed-preview.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- PAYHIP LINK -->
+    <a href="https://payhip.com/b/https://payhip.com/b/Y1Cn4" target="_blank" class="pay-btn">
+      🔒 Download Full Song (Subscribe & Pay)
+    </a>
   </div>
 
 </div>
 
+<!-- FOOTER -->
+<footer>
+  © 2026 Muzik €mpire | Muzik Trixx
+</footer>
+
 </body>
-      </html>
+</html>
