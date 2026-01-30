@@ -40,21 +40,24 @@ nav a:hover { text-decoration: underline; }
 }
 
 h1, p { text-align: center; }
-p { color: #555; }
+p { color: #555; margin-bottom: 20px; }
 
-/* MANUAL SLIDER */
+/* SLIDER STYLING */
+.slider-container {
+  position: relative;
+  margin: 30px 0;
+}
+
 .slider {
   display: flex;
   gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding: 20px 0;
+  scroll-behavior: smooth;
 }
 
-.slider::-webkit-scrollbar {
-  height: 8px;
-}
-
+.slider::-webkit-scrollbar { height: 8px; }
 .slider::-webkit-scrollbar-thumb {
   background: #ff3d81;
   border-radius: 10px;
@@ -75,6 +78,23 @@ video, img {
   background: #000;
 }
 
+/* ARROWS */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #ff3d81;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow-left { left: 0; }
+.arrow-right { right: 0; }
+
 footer {
   background: #111;
   color: #ccc;
@@ -87,6 +107,7 @@ footer {
 @media (max-width: 600px) {
   .slide { min-width: 260px; }
   nav { width: 100%; text-align: center; margin-top: 10px; }
+  .arrow { font-size: 25px; padding: 5px 8px; }
 }
 </style>
 </head>
@@ -97,7 +118,6 @@ footer {
   <a href="index.html">
     <img src="file_00000000badc620abf3df2a459d54ba3.png" class="logo">
   </a>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="music.html">Music</a>
@@ -108,25 +128,43 @@ footer {
 
 <div class="container">
 
-  <h1>Gallery</h1>
-  <p>Swipe or drag left & right to explore</p>
-
-  <!-- SLIDER -->
-  <div class="slider">
-
-    <div class="slide">
-      <video controls>
-        <source src="441-_Baby_its_you__OFFICIAL_VIDEO_HD_(360p).mp4">
-      </video>
+  <!-- PHOTO SECTION -->
+  <h1>Photo Gallery</h1>
+  <p>Swipe or drag left & right to see photos</p>
+  <div class="slider-container">
+    <div class="arrow arrow-left" onclick="scrollLeft('photoSlider')">&#10094;</div>
+    <div class="arrow arrow-right" onclick="scrollRight('photoSlider')">&#10095;</div>
+    <div class="slider" id="photoSlider">
+      <div class="slide"><img src="photo1.jpg" alt="Muzik Trixx"></div>
+      <div class="slide"><img src="photo2.jpg" alt="Muzik Trixx"></div>
+      <div class="slide"><img src="photo3.jpg" alt="Muzik Trixx"></div>
+      <!-- Add more photos here -->
     </div>
+  </div>
 
-    <div class="slide">
-      <video controls>
-        <source src="441,_Kontri_Boss_ft_L.A.J_-_Uwabiye_Remix_(360p).mp4">
-      </video>
-    </div>
-
-    <div class="slide">
+  <!-- VIDEO SECTION -->
+  <h1>Video Gallery</h1>
+  <p>Swipe or drag left & right to watch videos</p>
+  <div class="slider-container">
+    <div class="arrow arrow-left" onclick="scrollLeft('videoSlider')">&#10094;</div>
+    <div class="arrow arrow-right" onclick="scrollRight('videoSlider')">&#10095;</div>
+    <div class="slider" id="videoSlider">
+      <div class="slide">
+        <video controls>
+          <source src="441-_Baby_its_you__OFFICIAL_VIDEO_HD_(360p).mp4">
+        </video>
+      </div>
+      <div class="slide">
+        <video controls>
+          <source src="441,_Kontri_Boss_ft_L.A.J_-_Uwabiye_Remix_(360p).mp4">
+        </video>
+      </div>
+      <div class="slide">
+        <video controls>
+          <source src="From_your_...(720p).mp4">
+        </video>
+      </div>
+      <div class="slide">
         <img src="FB_IMG_1748842245284.jpg">
       </div>
 
@@ -141,8 +179,8 @@ footer {
       <!-- DUPLICATE -->
       <div class="slide">
         <img src="IMG-20250425-WA0040.jpg">
-      </div>
-
+      </div><!-- Add more videos here -->
+    </div>
   </div>
 
 </div>
@@ -151,5 +189,17 @@ footer {
   © 2026 Muzik €mpire | Muzik Trixx
 </footer>
 
+<script>
+function scrollLeft(sliderId) {
+  const slider = document.getElementById(sliderId);
+  slider.scrollBy({ left: -300, behavior: 'smooth' });
+}
+
+function scrollRight(sliderId) {
+  const slider = document.getElementById(sliderId);
+  slider.scrollBy({ left: 300, behavior: 'smooth' });
+}
+</script>
+
 </body>
-      </html>
+</html>
