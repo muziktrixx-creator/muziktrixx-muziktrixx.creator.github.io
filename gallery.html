@@ -1,142 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | Muzik €mpire</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muzik €mpire | Gallery</title>
 
-<style>
-:root{
-  --bg:#f3f9ff;           /* soft light background */
-  --card:#ffffff;
-  --accent:#6c63ff;       /* purple accent */
-  --text:#222;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+    }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+    header {
+      background: linear-gradient(135deg, #7b2ff7, #00c6ff);
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
 
-body{
-  font-family:Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+    .logo {
+      width: 70px;
+    }
 
-/* NAV */
-nav{
-  background:#ffffff;
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  padding:16px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.08);
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-nav a{
-  text-decoration:none;
-  font-weight:bold;
-  color:#333;
-}
-nav a:hover{color:var(--accent);}
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
 
-/* CONTAINER */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:60px 20px;
-  text-align:center;
-}
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-h1{
-  margin-bottom:40px;
-  font-size:2.5rem;
-}
+    .container {
+      padding: 30px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-/* GALLERY GRID */
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
 
-/* CARD */
-.gallery-card{
-  background:var(--card);
-  padding:15px;
-  border-radius:18px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.1);
-  transition:0.35s ease;
-}
+    p {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #555;
+    }
 
-.gallery-card:hover{
-  transform:translateY(-10px) scale(1.03);
-  background:linear-gradient(135deg,#6c63ff,#ff6ec4);
-  color:#fff;
-}
+    /* GALLERY GRID */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
 
-/* MEDIA */
-.gallery-card img,
-.gallery-card video{
-  width:100%;
-  border-radius:14px;
-  margin-bottom:10px;
-}
+    .gallery img,
+    .gallery video {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
+    }
 
-.gallery-card p{
-  font-size:16px;
-}
-</style>
+    .gallery img:hover,
+    .gallery video:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      color: #ccc;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="music.html">Music</a>
-  <a href="news.html">News</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="gallery.html">Gallery</a>
-</nav>
+  <!-- HEADER -->
+  <header>
+    <a href="index.html">
+      <img src="file_00000000badc620abf3df2a459d54ba3.png" alt="MT Logo" class="logo">
+    </a>
 
-<div class="container">
-<h1>📸 Photo & 🎥 Video Gallery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="music.html">Music</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="bio.html">Bio</a>
+    </nav>
+  </header>
 
-<div class="gallery-grid">
+  <!-- CONTENT -->
+  <div class="container">
+    <h1>Photo & Video Gallery</h1>
+    <p>Moments, visuals, and vibes from Muzik Trixx</p>
 
-  <!-- PHOTO -->
-  <div class="gallery-card">
-    <img src="    <img src="IMG-20250425-WA0035.jpg" alt="Live Performance">" alt="Live Performance">
-    <p>Live performance — crowd energy 💥</p>
+    <div class="gallery">
+      <!-- PHOTOS -->
+      <img src="FB_IMG_1748842245284.jpg" alt="Muzik Trixx Photo">
+      <img src="IMG-20250425-WA0035.jpg" alt="Muzik Trixx Photo">
+      <img src="IMG-20250425-WA0039.jpg" alt="Muzik Trixx Photo">
+      <img src="IMG-20250425-WA0040.jpg" alt="Muzik Trixx Photo">
+
+      <!-- VIDEO -->
+      <video controls>
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </div>
   </div>
 
-  <!-- PHOTO -->
-  <div class="gallery-card">
-    <img src="trixx-studio.jpg" alt="Studio Session">
-    <p>Studio session — work in progress 🎶</p>
-  </div>
-
-  <!-- VIDEO -->
-  <div class="gallery-card">
-    <video controls>
-      <source src="trixx-music-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <p>“Am Blesseed” Official Video</p>
-  </div>
-
-  <!-- VIDEO -->
-  <div class="gallery-card">
-    <video controls>
-      <source src="trixx-live-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <p>Live performance clip 🔥</p>
-  </div>
-
-</div>
-</div>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Muzik €mpire | Muzik Trixx
+  </footer>
 
 </body>
-                                </html>
+        </html>
