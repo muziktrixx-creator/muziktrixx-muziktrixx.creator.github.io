@@ -3,181 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muzik €mpire | Login / Sign Up</title>
+<title>Muzik €mpire | Muzik Trixx</title>
+
 <style>
-/* ===== GENERAL STYLES ===== */
-body {
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
   font-family: Arial, Helvetica, sans-serif;
-  background: #f5f5f5;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 
-/* ===== CONTAINER ===== */
-.container {
-  background: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  text-align: center;
-  width: 90%;
-  max-width: 400px;
+/* ===== BACKGROUND IMAGE SLIDER ===== */
+.slider{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  z-index:-2;
 }
 
-/* ===== MT LOGO ===== */
-.container img {
-  width: 120px;          
-  margin-bottom: 20px;
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  animation: slideShow 24s infinite;
 }
 
-/* ===== HEADINGS ===== */
-.container h2 {
-  margin-bottom: 20px;
-  color: #ff6f61;
+.slide:nth-child(1){
+  background-image:url("FB_IMG_1748842245284.jpg");
+  animation-delay:0s;
+}
+.slide:nth-child(2){
+  background-image:url("IMG-20250425-WA0035.jpg");
+  animation-delay:6s;
+}
+.slide:nth-child(3){
+  background-image:url("IMG-20250425-WA0039.jpg");
+  animation-delay:12s;
+}
+.slide:nth-child(4){
+  background-image:url("IMG-20250425-WA0040.jpg");
+  animation-delay:18s;
 }
 
-/* ===== FORM ELEMENTS ===== */
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  box-sizing: border-box;
+@keyframes slideShow{
+  0%{opacity:0;}
+  10%{opacity:1;}
+  30%{opacity:1;}
+  40%{opacity:0;}
 }
 
-/* PASSWORD FIELD CONTAINER */
-.password-container {
-  position: relative;
+/* ===== DARK OVERLAY ===== */
+.overlay{
+  background:rgba(0,0,0,0.55);
+  min-height:100vh;
+  position:relative;
+  z-index:1;
 }
 
-/* SHOW/HIDE PASSWORD BUTTON */
-.toggle-password {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 1.2rem;
+/* ===== NAVBAR ===== */
+nav{
+  background:rgba(255,255,255,0.95);
+  padding:16px;
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  position:sticky;
+  top:0;
+  z-index:5;
 }
 
-/* LOGIN BUTTON */
-button {
-  padding: 12px 20px;
-  background: #ff6f61;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 100%;
-  font-size: 1rem;
-  transition: opacity 0.3s;
+nav a{
+  text-decoration:none;
+  color:#333;
+  font-weight:bold;
 }
 
-button:hover {
-  opacity: 0.9;
+nav a:hover{
+  color:#ff6f61;
 }
 
-/* ===== GO BACK HOME BUTTON ===== */
-.home-btn {
-  margin-top: 20px;
-  padding: 12px 20px;
-  background: #1db954;   /* green to differentiate from login */
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: opacity 0.3s;
-}
-.home-btn:hover {
-  opacity: 0.9;
+/* ===== HERO SECTION ===== */
+.hero{
+  min-height:calc(100vh - 70px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:20px;
 }
 
-/* ===== SIGN UP LINK ===== */
-p {
-  margin-top: 15px;
-  font-size: 0.9rem;
+.hero-box{
+  max-width:800px;
 }
 
-p a {
-  color: #1db954;
-  text-decoration: none;
-  font-weight: bold;
+.hero h1{
+  font-size:3rem;
+  margin-bottom:15px;
 }
 
-p a:hover {
-  text-decoration: underline;
+.hero h1 span{
+  color:#ff6f61;
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
-@media (max-width: 480px) {
-  .container {
-    padding: 25px;
-  }
-  .container img {
-    width: 100px;
-  }
-  button, input[type="text"], input[type="password"], input[type="email"], .home-btn {
-    font-size: 0.9rem;
-  }
-  .toggle-password {
-    font-size: 1rem;
-  }
+.hero p{
+  font-size:1.2rem;
+  margin-bottom:30px;
+}
+
+.hero a{
+  display:inline-block;
+  padding:14px 30px;
+  margin:10px;
+  background:#ff6f61;
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.hero a.secondary{
+  background:#1db954;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .hero h1{font-size:2.2rem;}
+  .hero p{font-size:1rem;}
+  nav{font-size:14px;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-  <!-- MT LOGO -->
-  <img src="file_00000000badc620abf3df2a459d54ba3.png" alt="MT Logo">
+<!-- BACKGROUND SLIDER -->
+<div class="slider">
+  <div class="slide"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+</div>
 
-  <h2>Login / Sign Up</h2>
+<div class="overlay">
 
-  <!-- LOGIN FORM -->
-  <form>
-    <input type="email" placeholder="Email" required>
-    
-    <div class="password-container">
-      <input type="password" placeholder="Password" id="password" required>
-      <span class="toggle-password" onclick="togglePassword()">👁️</span>
-    </div>
-    
-    <button type="submit">Login</button>
-  </form>
+<!-- NAVIGATION -->
+<nav>
+  <a href="/">Home</a>
+  <a href="music.html">Music</a>
+  <a href="bio.html">Bio</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <p>Don't have an account? <a href="#">Sign Up</a></p>
+<!-- HERO CONTENT -->
+<section class="hero">
+  <div class="hero-box">
+    <h1>Welcome to <span>Muzik €mpire</span></h1>
+    <p>
+      Official home of <b>Muzik Trixx</b> — Afro vibes, real stories, and pure energy.
+      Where hustle meets melody and music speaks life.
+    </p>
 
-  <!-- GO BACK HOME BUTTON -->
-  <a href="index.html" class="home-btn">🏠 Go Back Home</a>
+    <a href="music.html">🎵 Listen Now</a>
+    <a href="gallery.html" class="secondary">📸 View Gallery</a>
+  </div>
+</section>
 
 </div>
 
-<!-- ===== SHOW/HIDE PASSWORD SCRIPT ===== -->
-<script>
-function togglePassword() {
-  const passwordField = document.getElementById('password');
-  const toggleBtn = document.querySelector('.toggle-password');
-  if (passwordField.type === 'password') {
-    passwordField.type = 'text';
-    toggleBtn.textContent = '🙈'; // Change emoji to indicate hide
-  } else {
-    passwordField.type = 'password';
-    toggleBtn.textContent = '👁️'; // Back to show emoji
-  }
-}
-</script>
-
 </body>
-  </html>
+</html>
