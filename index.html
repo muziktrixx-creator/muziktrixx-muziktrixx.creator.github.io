@@ -13,7 +13,7 @@
 }
 
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   overflow-x:hidden;
 }
 
@@ -37,6 +37,7 @@ body{
   animation:slideShow 24s infinite;
 }
 
+/* EXACT PHOTO NAMES */
 .slide:nth-child(1){
   background-image:url("FB_IMG_1748842245284.jpg");
   animation-delay:0s;
@@ -65,18 +66,20 @@ body{
 .overlay{
   background:rgba(0,0,0,0.55);
   min-height:100vh;
+  position:relative;
+  z-index:1;
 }
 
-/* ===== NAVBAR ===== */
+/* ===== NAV BAR ===== */
 nav{
-  position:sticky;
-  top:0;
-  z-index:5;
   background:rgba(255,255,255,0.95);
   padding:14px;
   display:flex;
   justify-content:center;
   gap:20px;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
 nav a{
@@ -89,14 +92,14 @@ nav a:hover{
   color:#ff6f61;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO SECTION ===== */
 .hero{
   min-height:calc(100vh - 60px);
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  color:white;
+  color:#fff;
   padding:20px;
 }
 
@@ -105,7 +108,7 @@ nav a:hover{
 }
 
 .hero h1{
-  font-size:2.8rem;
+  font-size:3rem;
   margin-bottom:15px;
 }
 
@@ -116,11 +119,12 @@ nav a:hover{
 .hero p{
   font-size:1.1rem;
   margin-bottom:30px;
+  line-height:1.6;
 }
 
 .hero a{
   display:inline-block;
-  padding:14px 28px;
+  padding:14px 32px;
   margin:10px;
   background:#ff6f61;
   color:white;
@@ -135,8 +139,12 @@ nav a:hover{
 
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-  .hero h1{font-size:2.1rem;}
-  .hero p{font-size:1rem;}
+  .hero h1{
+    font-size:2.2rem;
+  }
+  .hero p{
+    font-size:1rem;
+  }
 }
 </style>
 </head>
@@ -162,7 +170,7 @@ nav a:hover{
   <a href="contact.html">Contact</a>
 </nav>
 
-<!-- HERO -->
+<!-- HERO CONTENT -->
 <section class="hero">
   <div class="hero-box">
     <h1>Welcome to <span>Muzik €mpire</span></h1>
@@ -179,4 +187,4 @@ nav a:hover{
 </div>
 
 </body>
-      </html>
+</html>
