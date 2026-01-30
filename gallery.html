@@ -49,9 +49,9 @@ body {
   40% { opacity: 0; }
 }
 
-/* ===== DARK OVERLAY ===== */
+/* ===== OVERLAY ===== */
 .overlay {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.4);
   min-height: 100vh;
   position: relative;
   z-index: 1;
@@ -79,18 +79,18 @@ nav a:hover {
   color: #ff6f61;
 }
 
-/* ===== LOGIN/SIGNUP BUTTON FLOATING BOTTOM-RIGHT ===== */
+/* ===== LOGIN/SIGNUP BUTTON FLOATING OVER BACKGROUND ===== */
 .auth-btn {
-  position: absolute;
-  bottom: 20px;
+  position: fixed; /* fixed to stay on screen on top of background */
+  bottom: 20px;    /* bottom right corner */
   right: 20px;
   background: #ff6f61;
   color: white;
   border-radius: 25px;
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-weight: bold;
   text-decoration: none;
-  z-index: 10;
+  z-index: 999; /* always on top */
   transition: opacity 0.3s ease;
 }
 
@@ -146,17 +146,11 @@ nav a:hover {
 
 /* ===== MOBILE ===== */
 @media(max-width:768px) {
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  nav {
-    font-size: 14px;
-  }
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
+  nav { font-size: 14px; }
   .auth-btn {
-    padding: 8px 16px;
+    padding: 10px 18px;
     font-size: 14px;
     bottom: 15px;
     right: 15px;
@@ -186,9 +180,6 @@ nav a:hover {
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- LOGIN/SIGNUP BUTTON BOTTOM-RIGHT -->
-  <a href="login.html" class="auth-btn">Login / Sign Up</a>
-
   <!-- HERO CONTENT -->
   <section class="hero">
     <div class="hero-box">
@@ -205,5 +196,8 @@ nav a:hover {
 
 </div>
 
+<!-- LOGIN/SIGNUP BUTTON BOTTOM-RIGHT ON TOP OF BACKGROUND -->
+<a href="login.html" class="auth-btn">Login / Sign Up</a>
+
 </body>
-</html>
+        </html>
