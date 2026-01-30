@@ -3,195 +3,207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muzik €mpire | Gallery</title>
+<title>Muzik €mpire | Muzik Trixx</title>
 
 <style>
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f6fb;
-  color: #222;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  background: linear-gradient(135deg, #ff7a18, #ff3d81);
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
-.logo { width: 70px; }
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-}
-
-nav a:hover { text-decoration: underline; }
-
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 30px 20px;
-}
-
-h1, p { text-align: center; }
-p { color: #555; margin-bottom: 10px; }
-
-/* SLIDER STYLING */
-.slider-container {
-  position: relative;
-  margin: 30px 0;
-}
-
+/* ===== BACKGROUND SLIDER ===== */
 .slider {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 20px 0;
-  scroll-behavior: smooth;
-}
-
-.slider::-webkit-scrollbar { height: 8px; }
-.slider::-webkit-scrollbar-thumb {
-  background: #ff3d81;
-  border-radius: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
 }
 
 .slide {
-  min-width: 300px;
-  scroll-snap-align: center;
-  background: #fff;
-  border-radius: 15px;
-  padding: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-video, img {
-  width: 100%;
-  border-radius: 12px;
-  background: #000;
-}
-
-/* ARROWS */
-.arrow {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 30px;
-  color: #ff3d81;
-  background: rgba(255,255,255,0.7);
-  border-radius: 50%;
-  padding: 5px 10px;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideShow 24s infinite;
+}
+
+.slide:nth-child(1) { background-image: url("FB_IMG_1748842245284.jpg"); animation-delay:0s; }
+.slide:nth-child(2) { background-image: url("IMG-20250425-WA0035.jpg"); animation-delay:6s; }
+.slide:nth-child(3) { background-image: url("IMG-20250425-WA0039.jpg"); animation-delay:12s; }
+.slide:nth-child(4) { background-image: url("IMG-20250425-WA0040.jpg"); animation-delay:18s; }
+
+@keyframes slideShow {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+}
+
+/* ===== DARK OVERLAY ===== */
+.overlay {
+  background: rgba(0,0,0,0.5);
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== NAV BAR ===== */
+nav {
+  background: rgba(255,255,255,0.95);
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff6f61;
+}
+
+/* ===== LOGIN/SIGNUP BUTTON FLOATING BOTTOM-RIGHT ===== */
+.auth-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #ff6f61;
+  color: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-decoration: none;
   z-index: 10;
+  transition: opacity 0.3s ease;
 }
 
-.arrow-left { left: 0; }
-.arrow-right { right: 0; }
+.auth-btn:hover {
+  opacity: 0.85;
+}
 
-footer {
-  background: #111;
-  color: #ccc;
+/* ===== HERO CONTENT ===== */
+.hero {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 15px;
-  margin-top: 40px;
+  color: white;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .slide { min-width: 260px; }
-  nav { width: 100%; text-align: center; margin-top: 10px; }
-  .arrow { font-size: 25px; padding: 5px 8px; }
+.hero-box {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero h1 span {
+  color: #ff6f61;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero a {
+  display: inline-block;
+  padding: 14px 30px;
+  margin: 10px;
+  background: #ff6f61;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero a.secondary {
+  background: #1db954;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  nav {
+    font-size: 14px;
+  }
+  .auth-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    bottom: 15px;
+    right: 15px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <a href="index.html">
-    <img src="file_00000000badc620abf3df2a459d54ba3.png" class="logo">
-  </a>
+<!-- BACKGROUND SLIDER -->
+<div class="slider">
+  <div class="slide"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+</div>
+
+<div class="overlay">
+
+  <!-- NAVIGATION -->
   <nav>
     <a href="index.html">Home</a>
     <a href="music.html">Music</a>
-    <a href="gallery.html">Gallery</a>
     <a href="bio.html">Bio</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
   </nav>
-</header>
 
-<div class="container">
+  <!-- LOGIN/SIGNUP BUTTON BOTTOM-RIGHT -->
+  <a href="login.html" class="auth-btn">Login / Sign Up</a>
 
-  <!-- PHOTO SECTION -->
-  <h1>Photo Gallery</h1>
-  <p>Swipe or drag left & right to see photos</p>
+  <!-- HERO CONTENT -->
+  <section class="hero">
+    <div class="hero-box">
+      <h1>Welcome to <span>Muzik €mpire</span></h1>
+      <p>
+        Official home of <b>Muzik Trixx</b> — Afro vibes, real stories, and pure energy.
+        Where hustle meets melody and music speaks life.
+      </p>
 
-  <!-- SCROLL DOWN INDICATOR (JUST BELOW THE TEXT) -->
-  <div style="text-align:center; margin: 10px 0;">
-    <p style="font-size: 18px; color: #ff3d81; font-weight: bold;">
-      ⬇ Scroll down for Videos ⬇
-    </p>
-  </div>
-
-  <div class="slider-container">
-    <div class="arrow arrow-left" onclick="scrollLeft('photoSlider')">&#10094;</div>
-    <div class="arrow arrow-right" onclick="scrollRight('photoSlider')">&#10095;</div>
-    <div class="slider" id="photoSlider">
-      <div class="slide"><img src="FB_IMG_1748842245284.jpg" alt="Muzik Trixx"></div>
-      <div class="slide"><img src="IMG-20250425-WA0035.jpg" alt="Muzik Trixx"></div>
-      <div class="slide"><img src="IMG-20250425-WA0039.jpg" alt="Muzik Trixx"></div>
-      <div class="slide"><img src="IMG-20250425-WA0040.jpg" alt="Muzik Trixx"></div>
+      <a href="music.html">🎵 Listen Now</a>
+      <a href="gallery.html" class="secondary">📸 View Gallery</a>
     </div>
-  </div>
-
-  <!-- VIDEO SECTION -->
-  <h1>Video Gallery</h1>
-  <p>Swipe or drag left & right to watch videos</p>
-  <div class="slider-container">
-    <div class="arrow arrow-left" onclick="scrollLeft('videoSlider')">&#10094;</div>
-    <div class="arrow arrow-right" onclick="scrollRight('videoSlider')">&#10095;</div>
-    <div class="slider" id="videoSlider">
-      <div class="slide">
-        <video controls>
-          <source src="441-_Baby_its_you__OFFICIAL_VIDEO_HD_(360p).mp4">
-        </video>
-      </div>
-      <div class="slide">
-        <video controls>
-          <source src="441,_Kontri_Boss_ft_L.A.J_-_Uwabiye_Remix_(360p).mp4">
-        </video>
-      </div>
-      <div class="slide">
-        <video controls>
-          <source src="From_your_...(720p).mp4">
-        </video>
-      </div>
-    </div>
-  </div>
+  </section>
 
 </div>
 
-<footer>
-  © 2026 Muzik €mpire | Muzik Trixx
-</footer>
-
-<script>
-function scrollLeft(sliderId) {
-  const slider = document.getElementById(sliderId);
-  slider.scrollBy({ left: -300, behavior: 'smooth' });
-}
-
-function scrollRight(sliderId) {
-  const slider = document.getElementById(sliderId);
-  slider.scrollBy({ left: 300, behavior: 'smooth' });
-}
-</script>
-
 </body>
-  </html>
+</html>
