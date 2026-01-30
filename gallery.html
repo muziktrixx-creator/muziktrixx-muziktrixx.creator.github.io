@@ -80,18 +80,18 @@ nav a:hover { color:#ff6f61; }
 }
 .hero a.secondary { background:#1db954; }
 
-/* LOGIN/SIGNUP BUTTON ON BACKGROUND */
+/* LOGIN/SIGNUP BUTTON INSIDE HERO */
 .auth-btn {
   position: absolute;
-  bottom:20px; /* bottom of overlay (background) */
-  right:20px;  /* right of overlay */
+  bottom:20px; /* bottom of hero section */
+  right:20px;  /* right corner of hero */
   background:#ff6f61;
   color:white;
   border-radius:25px;
   padding:12px 25px;
   font-weight:bold;
   text-decoration:none;
-  z-index:2; /* above overlay but below hero content */
+  z-index:3; /* above hero content */
   transition:opacity 0.3s;
 }
 .auth-btn:hover { opacity:0.85; }
@@ -138,10 +138,10 @@ nav a:hover { color:#ff6f61; }
       <a href="music.html">🎵 Listen Now</a>
       <a href="gallery.html" class="secondary">📸 View Gallery</a>
     </div>
-  </section>
 
-  <!-- LOGIN/SIGNUP BUTTON ON BOTTOM-RIGHT OF BACKGROUND -->
-  <a href="login.html" class="auth-btn">Login / Sign Up</a>
+    <!-- LOGIN/SIGNUP BUTTON INSIDE HERO BOTTOM-RIGHT -->
+    <a href="login.html" class="auth-btn">Login / Sign Up</a>
+  </section>
 
 </div>
 
