@@ -4,43 +4,137 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login | Muzik €mpire</title>
+
 <style>
-body { font-family: Arial, sans-serif; background: #f4f6fb; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-.container { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); width: 90%; max-width: 400px; }
-h2 { text-align: center; color: #ff3d81; }
-input { width: 100%; padding: 10px; margin: 10px 0; border-radius: 6px; border: 1px solid #ccc; }
-button { width: 100%; padding: 10px; background: #ff3d81; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; }
-button:hover { background: #e63270; }
-p { text-align: center; margin-top: 15px; }
-a { color: #ff3d81; text-decoration: none; }
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f2f2f2;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+.box{
+  background:white;
+  width:90%;
+  max-width:400px;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+  text-align:center;
+}
+
+.logo{
+  width:110px;
+  margin-bottom:15px;
+}
+
+h2{
+  color:#ff6f61;
+  margin-bottom:20px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:5px;
+  font-size:16px;
+}
+
+.password-box{
+  position:relative;
+}
+
+.toggle{
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  font-size:18px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#ff6f61;
+  border:none;
+  color:white;
+  font-size:16px;
+  border-radius:25px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{opacity:0.9;}
+
+.link{
+  margin-top:15px;
+  font-size:14px;
+}
+
+.link a{
+  color:#1db954;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.home-btn{
+  margin-top:20px;
+  display:inline-block;
+  padding:12px 20px;
+  background:#1db954;
+  color:white;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+}
 </style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="box">
+  <img src="file_00000000badc620abf3df2a459d54ba3.png" class="logo" alt="MT Logo">
+
   <h2>Login</h2>
-  <input type="email" id="email" placeholder="Email" required>
-  <input type="password" id="password" placeholder="Password" required>
-  <button onclick="login()">Login</button>
-  <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+
+  <form>
+    <input type="email" placeholder="Email" required>
+
+    <div class="password-box">
+      <input type="password" id="loginPass" placeholder="Password" required>
+      <span class="toggle" onclick="toggleLogin()">👁️</span>
+    </div>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <div class="link">
+    No account? <a href="signup.html">Sign Up</a>
+  </div>
+
+  <!-- GO BACK HOME -->
+  <a href="index.html" class="home-btn">🏠 Go Back Home</a>
 </div>
 
 <script>
-function login() {
-  const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim();
-
-  const user = JSON.parse(localStorage.getItem('muzikUser'));
-
-  if(user && user.email === email && user.password === password){
-    localStorage.setItem('muzikLoggedIn', 'true');
-    alert('Login successful!');
-    window.location.href = 'music.html'; // redirect to music page after login
-  } else {
-    alert('Incorrect email or password!');
+function toggleLogin(){
+  const p = document.getElementById("loginPass");
+  const t = document.querySelector(".toggle");
+  if(p.type === "password"){
+    p.type = "text";
+    t.textContent = "🙈";
+  }else{
+    p.type = "password";
+    t.textContent = "👁️";
   }
 }
 </script>
 
 </body>
-    </html>
+</html>
