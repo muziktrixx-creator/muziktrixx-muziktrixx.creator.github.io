@@ -29,7 +29,7 @@ body {
 
 /* ===== MT LOGO ===== */
 .container img {
-  width: 120px;          /* Adjust logo size */
+  width: 120px;          
   margin-bottom: 20px;
 }
 
@@ -68,6 +68,24 @@ button:hover {
   opacity: 0.9;
 }
 
+/* ===== GO BACK HOME BUTTON ===== */
+.home-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #1db954;   /* green to differentiate from login */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.3s;
+}
+.home-btn:hover {
+  opacity: 0.9;
+}
+
 /* ===== SIGN UP LINK ===== */
 p {
   margin-top: 15px;
@@ -92,7 +110,7 @@ p a:hover {
   .container img {
     width: 100px;
   }
-  button, input[type="text"], input[type="password"], input[type="email"] {
+  button, input[type="text"], input[type="password"], input[type="email"], .home-btn {
     font-size: 0.9rem;
   }
 }
@@ -115,6 +133,10 @@ p a:hover {
   </form>
 
   <p>Don't have an account? <a href="#">Sign Up</a></p>
+
+  <!-- GO BACK HOME BUTTON -->
+  <a href="index.html" class="home-btn">🏠 Go Back Home</a>
+
 </div>
 
 </body>
