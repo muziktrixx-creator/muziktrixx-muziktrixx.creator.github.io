@@ -9,12 +9,12 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f7fa;
+      background: #f4f6fb;
       color: #222;
     }
 
     header {
-      background: linear-gradient(135deg, #7b2ff7, #00c6ff);
+      background: linear-gradient(135deg, #ff7a18, #ff3d81);
       padding: 15px 20px;
       display: flex;
       align-items: center;
@@ -45,7 +45,7 @@
 
     h1 {
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     p {
@@ -54,24 +54,29 @@
       color: #555;
     }
 
-    /* GALLERY GRID */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
-    .gallery img,
-    .gallery video {
+    .video-box {
+      background: #fff;
+      padding: 10px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .video-box h3 {
+      text-align: center;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    video {
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      transition: transform 0.3s;
-    }
-
-    .gallery img:hover,
-    .gallery video:hover {
-      transform: scale(1.05);
+      border-radius: 10px;
+      background: #000;
     }
 
     footer {
@@ -110,22 +115,29 @@
 
   <!-- CONTENT -->
   <div class="container">
-    <h1>Photo & Video Gallery</h1>
-    <p>Moments, visuals, and vibes from Muzik Trixx</p>
+    <h1>Video Gallery</h1>
+    <p>Official music videos from Muzik Trixx & Muzik €mpire</p>
 
     <div class="gallery">
-      <!-- PHOTOS -->
-      <img src="FB_IMG_1748842245284.jpg" alt="Muzik Trixx Photo">
-      <img src="IMG-20250425-WA0035.jpg" alt="Muzik Trixx Photo">
-      <img src="IMG-20250425-WA0039.jpg" alt="Muzik Trixx Photo">
-      <img src="IMG-20250425-WA0040.jpg" alt="Muzik Trixx Photo">
 
-      <!-- VIDEO -->
-      <video controls>
-        <source src="441-_Baby_its_you__OFFICIAL_VIDEO_HD_(360p).mp4" type="video/mp4">
-        <source src="441,_Kontri_Boss_ft_L.A.J_-_Uwabiye_Remix_(360p).mp4" type="video/mp4">
-        Your browser does not support video.
-      </video>
+      <!-- VIDEO 1 -->
+      <div class="video-box">
+        <video controls>
+          <source src="441-_Baby_its_you__OFFICIAL_VIDEO_HD_(360p).mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3>Baby It's You – Official Video</h3>
+      </div>
+
+      <!-- VIDEO 2 -->
+      <div class="video-box">
+        <video controls>
+          <source src="441,_Kontri_Boss_ft_L.A.J_-_Uwabiye_Remix_(360p).mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3>Kontri Boss ft L.A.J – Uwabiye (Remix)</h3>
+      </div>
+
     </div>
   </div>
 
@@ -135,4 +147,4 @@
   </footer>
 
 </body>
-        </html>
+            </html>
