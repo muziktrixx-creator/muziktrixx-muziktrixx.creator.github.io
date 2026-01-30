@@ -6,17 +6,11 @@
 
 <title>Muzik €mpire | Muzik Trixx</title>
 
-<!-- 🔥 LINK PREVIEW (FOR WHATSAPP / FACEBOOK / TWITTER) -->
-<meta property="og:type" content="website">
+<!-- SHARE PREVIEW -->
 <meta property="og:title" content="Muzik €mpire | Muzik Trixx">
-<meta property="og:description" content="Official home of Muzik Trixx — Afro vibes, real stories, and pure energy.">
-<meta property="og:image" content="https://muziktrixx.github.io/file_00000000badc620abf3df2a459d54ba3.png">
-<meta property="og:url" content="https://muziktrixx.github.io">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Muzik €mpire | Muzik Trixx">
-<meta name="twitter:description" content="Official home of Muzik Trixx — Afro vibes, real stories, and pure energy.">
-<meta name="twitter:image" content="https://muziktrixx.github.io/file_00000000badc620abf3df2a459d54ba3.png">
+<meta property="og:description" content="Afro vibes, real stories & pure energy. Official home of Muzik Trixx.">
+<meta property="og:image" content="FB_IMG_1748842245284.jpg">
+<meta property="og:type" content="website">
 
 <style>
 *{
@@ -27,115 +21,111 @@
 
 body{
   font-family:Arial, Helvetica, sans-serif;
+  background:#000;
+  color:#fff;
 }
 
-/* ===== BACKGROUND SLIDER ===== */
-.slider{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100vh;
-  z-index:-2;
-}
-
-.slide{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  animation:slideShow 24s infinite;
-}
-
-.slide:nth-child(1){
-  background-image:url("FB_IMG_1748842245284.jpg");
-  animation-delay:0s;
-}
-.slide:nth-child(2){
-  background-image:url("IMG-20250425-WA0035.jpg");
-  animation-delay:6s;
-}
-.slide:nth-child(3){
-  background-image:url("IMG-20250425-WA0039.jpg");
-  animation-delay:12s;
-}
-.slide:nth-child(4){
-  background-image:url("IMG-20250425-WA0040.jpg");
-  animation-delay:18s;
-}
-
-@keyframes slideShow{
-  0%{opacity:0;}
-  10%{opacity:1;}
-  30%{opacity:1;}
-  40%{opacity:0;}
-}
-
-/* ===== OVERLAY ===== */
-.overlay{
-  background:rgba(0,0,0,0.55);
-  min-height:100vh;
-  z-index:-1;
-}
-
-/* ===== NAV BAR ===== */
+/* ===== NAV ===== */
 nav{
-  background:rgba(255,255,255,0.95);
-  padding:14px;
+  background:#fff;
+  padding:16px;
   display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:18px;
+  justify-content:center;
+  gap:22px;
   position:sticky;
   top:0;
+  z-index:10;
 }
 
-/* LOGO */
-.logo{
-  width:55px;
-}
-
-/* NAV LINKS */
-.nav-links a{
+nav a{
   text-decoration:none;
   color:#333;
   font-weight:bold;
-  margin:0 10px;
 }
 
-.nav-links a:hover{
-  color:#ff6f61;
-}
-
-/* ===== HERO SECTION ===== */
-.hero{
-  min-height:calc(100vh - 70px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+/* ===== PHOTO SLIDER ===== */
+.photo-section{
+  padding:30px 0;
   text-align:center;
-  color:white;
-  padding:20px;
 }
 
-.hero-box{
+.photo-hint{
+  margin-bottom:10px;
+  font-weight:bold;
+  opacity:0.9;
+}
+
+.slider{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+}
+
+.slider::-webkit-scrollbar{
+  display:none;
+}
+
+.slide{
+  min-width:100%;
+  scroll-snap-align:start;
+}
+
+.slide img{
+  width:100%;
+  height:80vh;
+  object-fit:cover;
+}
+
+/* ===== SCROLL DOWN INDICATOR ===== */
+.scroll-down{
+  margin:15px 0 5px;
+  font-size:18px;
+  animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(6px);}
+}
+
+/* ===== VIDEO SECTION ===== */
+.video-section{
+  padding:40px 20px;
+  background:#111;
+}
+
+.video-section h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.video-box{
   max-width:800px;
+  margin:20px auto;
+}
+
+video{
+  width:100%;
+  border-radius:12px;
+}
+
+/* ===== HERO ===== */
+.hero{
+  padding:60px 20px;
+  text-align:center;
 }
 
 .hero h1{
-  font-size:3rem;
-  margin-bottom:15px;
+  font-size:2.5rem;
 }
 
-.hero h1 span{
+.hero span{
   color:#ff6f61;
 }
 
 .hero p{
-  font-size:1.2rem;
-  margin-bottom:30px;
+  max-width:700px;
+  margin:15px auto 30px;
 }
 
 .hero a{
@@ -155,15 +145,11 @@ nav{
 
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-  nav{
-    flex-direction:column;
+  .slide img{
+    height:60vh;
   }
-
   .hero h1{
-    font-size:2.2rem;
-  }
-  .hero p{
-    font-size:1rem;
+    font-size:2rem;
   }
 }
 </style>
@@ -171,46 +157,56 @@ nav{
 
 <body>
 
-<!-- BACKGROUND SLIDER -->
-<div class="slider">
-  <div class="slide"></div>
-  <div class="slide"></div>
-  <div class="slide"></div>
-  <div class="slide"></div>
-</div>
-
-<div class="overlay">
-
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav>
-  <a href="index.html">
-    <img src="file_00000000badc620abf3df2a459d54ba3.png" class="logo" alt="MT Logo">
-  </a>
-
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="music.html">Music</a>
-    <a href="bio.html">Bio</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <a href="index.html">Home</a>
+  <a href="music.html">Music</a>
+  <a href="bio.html">Bio</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
-<!-- HERO CONTENT -->
-<section class="hero">
-  <div class="hero-box">
-    <h1>Welcome to <span>Muzik €mpire</span></h1>
-    <p>
-      Official home of <b>Muzik Trixx</b> — Afro vibes, real stories, and pure energy.
-      Where hustle meets melody and music speaks life.
-    </p>
+<!-- PHOTOS -->
+<section class="photo-section">
+  <div class="photo-hint">⬅ Swipe right to left to see photos ➡</div>
 
-    <a href="music.html">🎵 Listen Now</a>
-    <a href="gallery.html" class="secondary">📸 View Gallery</a>
+  <div class="slider">
+    <div class="slide"><img src="FB_IMG_1748842245284.jpg"></div>
+    <div class="slide"><img src="IMG-20250425-WA0035.jpg"></div>
+    <div class="slide"><img src="IMG-20250425-WA0039.jpg"></div>
+    <div class="slide"><img src="IMG-20250425-WA0040.jpg"></div>
+  </div>
+
+  <div class="scroll-down">Scroll down for videos 👇</div>
+</section>
+
+<!-- VIDEOS -->
+<section class="video-section">
+  <h2>🎬 Videos</h2>
+
+  <div class="video-box">
+    <video controls>
+      <source src="video1.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="video-box">
+    <video controls>
+      <source src="video2.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
-</div>
+<!-- HERO -->
+<section class="hero">
+  <h1>Welcome to <span>Muzik €mpire</span></h1>
+  <p>
+    Official home of <b>Muzik Trixx</b> — Afro vibes, real stories, and pure energy.
+  </p>
+
+  <a href="music.html">🎵 Listen Now</a>
+  <a href="gallery.html" class="secondary">📸 View Gallery</a>
+</section>
 
 </body>
   </html>
