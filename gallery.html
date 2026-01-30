@@ -14,7 +14,6 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
 }
 
 /* ===== BACKGROUND SLIDER ===== */
@@ -79,25 +78,6 @@ nav a:hover {
   color: #ff6f61;
 }
 
-/* ===== LOGIN/SIGNUP BUTTON FLOATING OVER BACKGROUND ===== */
-.auth-btn {
-  position: fixed; /* fixed to stay on screen on top of background */
-  bottom: 20px;    /* bottom right corner */
-  right: 20px;
-  background: #ff6f61;
-  color: white;
-  border-radius: 25px;
-  padding: 12px 25px;
-  font-weight: bold;
-  text-decoration: none;
-  z-index: 999; /* always on top */
-  transition: opacity 0.3s ease;
-}
-
-.auth-btn:hover {
-  opacity: 0.85;
-}
-
 /* ===== HERO CONTENT ===== */
 .hero {
   min-height: calc(100vh - 70px);
@@ -113,6 +93,25 @@ nav a:hover {
 
 .hero-box {
   max-width: 800px;
+}
+
+/* ===== LOGIN/SIGNUP BUTTON ON BACKGROUND ===== */
+.auth-btn {
+  position: absolute; /* inside hero overlay */
+  bottom: 20px;       /* bottom of hero background */
+  right: 20px;        /* right corner of hero background */
+  background: #ff6f61;
+  color: white;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 3; /* above hero content but below overlay */
+  transition: opacity 0.3s ease;
+}
+
+.auth-btn:hover {
+  opacity: 0.85;
 }
 
 .hero h1 {
@@ -149,12 +148,7 @@ nav a:hover {
   .hero h1 { font-size: 2.2rem; }
   .hero p { font-size: 1rem; }
   nav { font-size: 14px; }
-  .auth-btn {
-    padding: 10px 18px;
-    font-size: 14px;
-    bottom: 15px;
-    right: 15px;
-  }
+  .auth-btn { padding: 10px 18px; font-size: 14px; bottom: 15px; right: 15px; }
 }
 </style>
 </head>
@@ -191,13 +185,14 @@ nav a:hover {
 
       <a href="music.html">🎵 Listen Now</a>
       <a href="gallery.html" class="secondary">📸 View Gallery</a>
+
+      <!-- LOGIN/SIGNUP BUTTON ON BOTTOM RIGHT OF BACKGROUND -->
+      <a href="login.html" class="auth-btn">Login / Sign Up</a>
+
     </div>
   </section>
 
 </div>
 
-<!-- LOGIN/SIGNUP BUTTON BOTTOM-RIGHT ON TOP OF BACKGROUND -->
-<a href="login.html" class="auth-btn">Login / Sign Up</a>
-
 </body>
-        </html>
+  </html>
