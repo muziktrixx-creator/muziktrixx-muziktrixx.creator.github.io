@@ -17,8 +17,8 @@ header {
   background: linear-gradient(135deg, #ff7a18, #ff3d81);
   padding: 15px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -26,8 +26,8 @@ header {
 
 nav a {
   color: #fff;
-  margin: 0 10px;
   text-decoration: none;
+  margin: 0 10px;
   font-weight: bold;
 }
 
@@ -40,54 +40,39 @@ nav a:hover { text-decoration: underline; }
 }
 
 h1, p { text-align: center; }
+p { color: #555; }
 
-p { color: #555; margin-bottom: 30px; }
-
-/* SLIDER COMMON */
+/* MANUAL SLIDER */
 .slider {
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 50px;
-}
-
-.slide-track {
   display: flex;
-  width: max-content;
-  animation: scroll-left 25s linear infinite;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px 0;
 }
 
-.slider.reverse .slide-track {
-  animation: scroll-right 30s linear infinite;
+.slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background: #ff3d81;
+  border-radius: 10px;
 }
 
 .slide {
   min-width: 300px;
-  margin: 0 15px;
-}
-
-/* VIDEO */
-video {
-  width: 100%;
-  border-radius: 12px;
-  background: #000;
-}
-
-/* IMAGE */
-.slide img {
-  width: 100%;
-  border-radius: 12px;
+  scroll-snap-align: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* ANIMATIONS */
-@keyframes scroll-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-@keyframes scroll-right {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
+video, img {
+  width: 100%;
+  border-radius: 12px;
+  background: #000;
 }
 
 footer {
@@ -95,11 +80,12 @@ footer {
   color: #ccc;
   text-align: center;
   padding: 15px;
+  margin-top: 40px;
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-  .slide { min-width: 250px; }
+  .slide { min-width: 260px; }
   nav { width: 100%; text-align: center; margin-top: 10px; }
 }
 </style>
@@ -111,6 +97,7 @@ footer {
   <a href="index.html">
     <img src="file_00000000badc620abf3df2a459d54ba3.png" class="logo">
   </a>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="music.html">Music</a>
@@ -121,49 +108,25 @@ footer {
 
 <div class="container">
 
-  <h1>Video Gallery</h1>
-  <p>Slide left to right – official videos</p>
+  <h1>Gallery</h1>
+  <p>Swipe or drag left & right to explore</p>
 
-  <!-- VIDEO SLIDER -->
+  <!-- SLIDER -->
   <div class="slider">
-    <div class="slide-track">
 
-      <div class="slide">
-        <video controls>
-          <source src="441-_Baby_its_you__OFFICIAL_VIDEO_HD_(360p).mp4">
-        </video>
-      </div>
-
-      <div class="slide">
-        <video controls>
-          <source src="441,_Kontri_Boss_ft_L.A.J_-_Uwabiye_Remix_(360p).mp4">
-        </video>
-      </div>
-
-      <div class="slide">
-        <video controls>
-          <source src="From_your_...(720p).mp4">
-        </video>
-      </div>
-
-      <!-- DUPLICATE FOR SMOOTH LOOP -->
-      <div class="slide">
-        <video controls>
-          <source src="441-_Baby_its_you__OFFICIAL_VIDEO_HD_(360p).mp4">
-        </video>
-      </div>
-
+    <div class="slide">
+      <video controls>
+        <source src="441-_Baby_its_you__OFFICIAL_VIDEO_HD_(360p).mp4">
+      </video>
     </div>
-  </div>
 
-  <h1>Photo Gallery</h1>
-  <p>Slides right to left – memories & vibes</p>
+    <div class="slide">
+      <video controls>
+        <source src="441,_Kontri_Boss_ft_L.A.J_-_Uwabiye_Remix_(360p).mp4">
+      </video>
+    </div>
 
-  <!-- PHOTO SLIDER (REVERSE) -->
-  <div class="slider reverse">
-    <div class="slide-track">
-
-      <div class="slide">
+    <div class="slide">
         <img src="FB_IMG_1748842245284.jpg">
       </div>
 
@@ -179,8 +142,6 @@ footer {
       <div class="slide">
         <img src="IMG-20250425-WA0040.jpg">
       </div>
-
-    </div>
   </div>
 
 </div>
@@ -190,4 +151,4 @@ footer {
 </footer>
 
 </body>
-        </html>
+</html>
