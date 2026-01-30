@@ -1,150 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muzik €mpire | Gallery</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muzik €mpire | Gallery</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6fb;
-      color: #222;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+  color: #222;
+}
 
-    header {
-      background: linear-gradient(135deg, #ff7a18, #ff3d81);
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+header {
+  background: linear-gradient(135deg, #ff7a18, #ff3d81);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-    .logo {
-      width: 70px;
-    }
+.logo { width: 70px; }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-    }
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+nav a:hover { text-decoration: underline; }
 
-    .container {
-      padding: 30px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 8px;
-    }
+h1, p { text-align: center; }
 
-    p {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #555;
-    }
+p { color: #555; margin-bottom: 30px; }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
+/* SLIDER COMMON */
+.slider {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 50px;
+}
 
-    .video-box {
-      background: #fff;
-      padding: 10px;
-      border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
+.slide-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 25s linear infinite;
+}
 
-    .video-box h3 {
-      text-align: center;
-      font-size: 16px;
-      margin: 10px 0;
-    }
+.slider.reverse .slide-track {
+  animation: scroll-right 30s linear infinite;
+}
 
-    video {
-      width: 100%;
-      border-radius: 10px;
-      background: #000;
-    }
+.slide {
+  min-width: 300px;
+  margin: 0 15px;
+}
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #111;
-      color: #ccc;
-      margin-top: 40px;
-    }
+/* VIDEO */
+video {
+  width: 100%;
+  border-radius: 12px;
+  background: #000;
+}
 
-    @media (max-width: 600px) {
-      nav {
-        margin-top: 10px;
-        width: 100%;
-        text-align: center;
-      }
-    }
-  </style>
+/* IMAGE */
+.slide img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ANIMATIONS */
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 15px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .slide { min-width: 250px; }
+  nav { width: 100%; text-align: center; margin-top: 10px; }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <a href="index.html">
-      <img src="file_00000000badc620abf3df2a459d54ba3.png" alt="MT Logo" class="logo">
-    </a>
+<header>
+  <a href="index.html">
+    <img src="file_00000000badc620abf3df2a459d54ba3.png" class="logo">
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="bio.html">Bio</a>
+  </nav>
+</header>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="music.html">Music</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="bio.html">Bio</a>
-    </nav>
-  </header>
+<div class="container">
 
-  <!-- CONTENT -->
-  <div class="container">
-    <h1>Video Gallery</h1>
-    <p>Official music videos from Muzik Trixx & Muzik €mpire</p>
+  <h1>Video Gallery</h1>
+  <p>Slide left to right – official videos</p>
 
-    <div class="gallery">
+  <!-- VIDEO SLIDER -->
+  <div class="slider">
+    <div class="slide-track">
 
-      <!-- VIDEO 1 -->
-      <div class="video-box">
+      <div class="slide">
         <video controls>
-          <source src="441-_Baby_its_you__OFFICIAL_VIDEO_HD_(360p).mp4" type="video/mp4">
-          Your browser does not support the video tag.
+          <source src="441-_Baby_its_you__OFFICIAL_VIDEO_HD_(360p).mp4">
         </video>
-        <h3>Baby It's You – Official Video</h3>
       </div>
 
-      <!-- VIDEO 2 -->
-      <div class="video-box">
+      <div class="slide">
         <video controls>
-          <source src="441,_Kontri_Boss_ft_L.A.J_-_Uwabiye_Remix_(360p).mp4" type="video/mp4">
-          Your browser does not support the video tag.
+          <source src="441,_Kontri_Boss_ft_L.A.J_-_Uwabiye_Remix_(360p).mp4">
         </video>
-        <h3>Kontri Boss ft L.A.J – Uwabiye (Remix)</h3>
+      </div>
+
+      <div class="slide">
+        <video controls>
+          <source src="From_your_...(720p).mp4">
+        </video>
+      </div>
+
+      <!-- DUPLICATE FOR SMOOTH LOOP -->
+      <div class="slide">
+        <video controls>
+          <source src="441-_Baby_its_you__OFFICIAL_VIDEO_HD_(360p).mp4">
+        </video>
       </div>
 
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Muzik €mpire | Muzik Trixx
-  </footer>
+  <h1>Photo Gallery</h1>
+  <p>Slides right to left – memories & vibes</p>
+
+  <!-- PHOTO SLIDER (REVERSE) -->
+  <div class="slider reverse">
+    <div class="slide-track">
+
+      <div class="slide">
+        <img src="FB_IMG_1748842245284.jpg">
+      </div>
+
+      <div class="slide">
+        <img src="IMG-20250425-WA0035.jpg">
+      </div>
+
+      <div class="slide">
+        <img src="IMG-20250425-WA0039.jpg">
+      </div>
+
+      <!-- DUPLICATE -->
+      <div class="slide">
+        <img src="IMG-20250425-WA0040.jpg">
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Muzik €mpire | Muzik Trixx
+</footer>
 
 </body>
-            </html>
+        </html>
