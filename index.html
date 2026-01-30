@@ -14,9 +14,10 @@
 
 body{
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x:hidden;
 }
 
-/* ===== BACKGROUND IMAGE SLIDER ===== */
+/* ===== BACKGROUND SLIDER ===== */
 .slider{
   position:fixed;
   top:0;
@@ -33,7 +34,7 @@ body{
   background-size:cover;
   background-position:center;
   opacity:0;
-  animation: slideShow 24s infinite;
+  animation:slideShow 24s infinite;
 }
 
 .slide:nth-child(1){
@@ -64,20 +65,18 @@ body{
 .overlay{
   background:rgba(0,0,0,0.55);
   min-height:100vh;
-  position:relative;
-  z-index:1;
 }
 
 /* ===== NAVBAR ===== */
 nav{
-  background:rgba(255,255,255,0.95);
-  padding:16px;
-  display:flex;
-  justify-content:center;
-  gap:22px;
   position:sticky;
   top:0;
   z-index:5;
+  background:rgba(255,255,255,0.95);
+  padding:14px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
 }
 
 nav a{
@@ -90,9 +89,9 @@ nav a:hover{
   color:#ff6f61;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO ===== */
 .hero{
-  min-height:calc(100vh - 70px);
+  min-height:calc(100vh - 60px);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -106,7 +105,7 @@ nav a:hover{
 }
 
 .hero h1{
-  font-size:3rem;
+  font-size:2.8rem;
   margin-bottom:15px;
 }
 
@@ -115,13 +114,13 @@ nav a:hover{
 }
 
 .hero p{
-  font-size:1.2rem;
+  font-size:1.1rem;
   margin-bottom:30px;
 }
 
 .hero a{
   display:inline-block;
-  padding:14px 30px;
+  padding:14px 28px;
   margin:10px;
   background:#ff6f61;
   color:white;
@@ -136,9 +135,8 @@ nav a:hover{
 
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-  .hero h1{font-size:2.2rem;}
+  .hero h1{font-size:2.1rem;}
   .hero p{font-size:1rem;}
-  nav{font-size:14px;}
 }
 </style>
 </head>
@@ -157,14 +155,14 @@ nav a:hover{
 
 <!-- NAVIGATION -->
 <nav>
-  <a href="/">Home</a>
+  <a href="index.html">Home</a>
   <a href="music.html">Music</a>
   <a href="bio.html">Bio</a>
   <a href="gallery.html">Gallery</a>
   <a href="contact.html">Contact</a>
 </nav>
 
-<!-- HERO CONTENT -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-box">
     <h1>Welcome to <span>Muzik €mpire</span></h1>
