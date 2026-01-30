@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up | Muzik €mpire</title>
+<style>
+body { font-family: Arial, sans-serif; background: #f4f6fb; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+.container { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); width: 90%; max-width: 400px; }
+h2 { text-align: center; color: #ff3d81; }
+input { width: 100%; padding: 10px; margin: 10px 0; border-radius: 6px; border: 1px solid #ccc; }
+button { width: 100%; padding: 10px; background: #ff3d81; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; }
+button:hover { background: #e63270; }
+p { text-align: center; margin-top: 15px; }
+a { color: #ff3d81; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Create Account</h2>
+  <input type="text" id="username" placeholder="Username" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="password" id="password" placeholder="Password" required>
+  <button onclick="signup()">Sign Up</button>
+  <p>Already have an account? <a href="login.html">Login</a></p>
+</div>
+
+<script>
+function signup() {
+  const username = document.getElementById('username').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  if(!username || !email || !password){
+    alert('All fields are required!');
+    return;
+  }
+
+  // Save user to localStorage
+  localStorage.setItem('muzikUser', JSON.stringify({ username, email, password }));
+  alert('Account created successfully!');
+  window.location.href = 'login.html';
+}
+</script>
+
+</body>
+  </html>
