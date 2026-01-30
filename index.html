@@ -3,142 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muzik €mpire | Muzik Trixx</title>
 
+<title>Muzik €mpire | MusicTrixx</title>
+
+<!-- 🔥 LINK PREVIEW (VERY IMPORTANT) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Muzik €mpire | MusicTrixx">
+<meta property="og:description" content="Listen to Muzik Trixx music, watch videos, and enjoy exclusive Afro entertainment.">
+<meta property="og:image" content="https://muziktrixx.github.io/file_00000000badc620abf3df2a459d54ba3.png">
+<meta property="og:url" content="https://muziktrixx.github.io">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muzik €mpire | MusicTrixx">
+<meta name="twitter:description" content="Listen to Muzik Trixx music, watch videos, and enjoy exclusive Afro entertainment.">
+<meta name="twitter:image" content="https://muziktrixx.github.io/file_00000000badc620abf3df2a459d54ba3.png">
+
+<!-- 🎨 STYLES -->
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+  color: #222;
 }
 
-body{
-  font-family:Arial, Helvetica, sans-serif;
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #ff7a18, #ff3d81);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-/* ===== BACKGROUND SLIDER ===== */
-.slider{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100vh;
-  z-index:-2;
+.logo {
+  width: 70px;
 }
 
-.slide{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  animation:slideShow 24s infinite;
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
 }
 
-.slide:nth-child(1){
-  background-image:url("FB_IMG_1748842245284.jpg");
-  animation-delay:0s;
-}
-.slide:nth-child(2){
-  background-image:url("IMG-20250425-WA0035.jpg");
-  animation-delay:6s;
-}
-.slide:nth-child(3){
-  background-image:url("IMG-20250425-WA0039.jpg");
-  animation-delay:12s;
-}
-.slide:nth-child(4){
-  background-image:url("IMG-20250425-WA0040.jpg");
-  animation-delay:18s;
+nav a:hover {
+  text-decoration: underline;
 }
 
-@keyframes slideShow{
-  0%{opacity:0;}
-  10%{opacity:1;}
-  30%{opacity:1;}
-  40%{opacity:0;}
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
 }
 
-/* ===== OVERLAY ===== */
-.overlay{
-  background:rgba(0,0,0,0.6);
-  min-height:100vh;
-  z-index:-1;
+.hero h1 {
+  font-size: 36px;
+  color: #ff3d81;
 }
 
-/* ===== NAV BAR ===== */
-nav{
-  background:rgba(255,255,255,0.95);
-  padding:16px;
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  position:sticky;
-  top:0;
+.hero p {
+  font-size: 18px;
+  color: #555;
+  max-width: 600px;
+  margin: auto;
 }
 
-nav a{
-  text-decoration:none;
-  color:#333;
-  font-weight:bold;
+/* BUTTONS */
+.buttons {
+  margin-top: 30px;
 }
 
-nav a:hover{
-  color:#ff6f61;
+.buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  background: #ff3d81;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* ===== HERO SECTION ===== */
-.hero{
-  min-height:calc(100vh - 70px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  padding:20px;
+.buttons a:hover {
+  background: #e63270;
 }
 
-.hero-box{
-  max-width:800px;
+/* FOOTER */
+footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 15px;
+  margin-top: 60px;
 }
 
-.hero h1{
-  font-size:3rem;
-  margin-bottom:15px;
-}
-
-.hero h1 span{
-  color:#ff6f61;
-}
-
-.hero p{
-  font-size:1.2rem;
-  margin-bottom:30px;
-}
-
-.hero a{
-  display:inline-block;
-  padding:14px 30px;
-  margin:10px;
-  background:#ff6f61;
-  color:white;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.hero a.secondary{
-  background:#1db954;
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-  .hero h1{
-    font-size:2.2rem;
+/* MOBILE */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 28px;
   }
-  .hero p{
-    font-size:1rem;
+  nav {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
   }
 }
 </style>
@@ -146,40 +115,37 @@ nav a:hover{
 
 <body>
 
-<!-- BACKGROUND SLIDER -->
-<div class="slider">
-  <div class="slide"></div>
-  <div class="slide"></div>
-  <div class="slide"></div>
-  <div class="slide"></div>
-</div>
+<header>
+  <a href="index.html">
+    <img src="file_00000000badc620abf3df2a459d54ba3.png" class="logo" alt="MT Logo">
+  </a>
 
-<div class="overlay">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="bio.html">Bio</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
 
-<!-- NAVIGATION -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="music.html">Music</a>
-  <a href="bio.html">Bio</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<!-- HERO CONTENT -->
 <section class="hero">
-  <div class="hero-box">
-    <h1>Welcome to <span>Muzik €mpire</span></h1>
-    <p>
-      Official home of <b>Muzik Trixx</b> — Afro vibes, real stories, and pure energy.
-      Where hustle meets melody and music speaks life.
-    </p>
+  <h1>Welcome to Muzik €mpire</h1>
+  <p>
+    Home of Muzik Trixx.  
+    Listen to Afro music, watch exclusive videos, and support real talent.
+  </p>
 
-    <a href="music.html">🎵 Listen Now</a>
-    <a href="gallery.html" class="secondary">📸 View Gallery</a>
+  <div class="buttons">
+    <a href="music.html">🎧 Listen to Music</a>
+    <a href="gallery.html">🎥 Watch Videos</a>
   </div>
 </section>
 
-</div>
+<footer>
+  © 2026 Muzik €mpire | MusicTrixx
+</footer>
 
 </body>
-  </html>
+      </html>
