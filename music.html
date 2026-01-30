@@ -3,146 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Music | Muzik €mpire</title>
+<title>Muzik €mpire | Music</title>
 
+<!-- Styles -->
 <style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f4f6f8;
-  color:#222;
-}
-
-/* NAV BAR */
-nav{
-  background:#ffffff;
-  padding:16px;
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.1);
-}
-
-nav a{
-  text-decoration:none;
-  color:#333;
-  font-weight:bold;
-}
-
-nav a:hover{
-  color:#ff6f61;
-}
-
-/* PAGE CONTAINER */
-.container{
-  max-width:900px;
-  margin:40px auto;
-  padding:20px;
-}
-
-/* SONG CARD */
-.song-card{
-  background:#ffffff;
-  padding:25px;
-  border-radius:12px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
-  margin-bottom:30px;
-}
-
-.song-card h2{
-  margin-bottom:10px;
-  color:#ff6f61;
-}
-
-.song-card p{
-  margin-bottom:15px;
-  line-height:1.6;
-}
-
-/* AUDIO PLAYER */
-audio{
-  width:100%;
-  margin:15px 0;
-}
-
-/* PAY BUTTON */
-.pay-btn{
-  display:inline-block;
-  padding:14px 28px;
-  background:#1db954;
-  color:white;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:bold;
-}
-
-.pay-btn:hover{
-  background:#169c46;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  color:#666;
-  font-size:14px;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  .container{
-    margin:20px;
-  }
-}
+body { font-family: Arial, sans-serif; background: #f4f6fb; margin: 0; color: #222; }
+header { background: linear-gradient(135deg, #ff7a18, #ff3d81); padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.logo { width: 70px; }
+nav a { color: #fff; text-decoration: none; margin: 0 10px; font-weight: bold; }
+nav a:hover { text-decoration: underline; }
+.container { max-width: 1200px; margin: auto; padding: 30px 20px; }
+h1 { text-align: center; color: #ff3d81; }
+.song { background: #fff; padding: 15px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.song h3 { margin-top: 0; }
+.song audio { width: 100%; border-radius: 8px; margin-top: 10px; }
+.song p { margin-top: 10px; font-weight: bold; }
+footer { background: #111; color: #ccc; text-align: center; padding: 15px; margin-top: 40px; }
+.sharethis-inline-share-buttons { margin-top: 15px; }
 </style>
+
+<!-- Disqus & ShareThis Scripts will be added at bottom -->
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="music.html">Music</a>
-  <a href="bio.html">Bio</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
-</nav>
+<!-- LOGIN CHECK -->
+<script>
+const loggedIn = localStorage.getItem('muzikLoggedIn');
+if(!loggedIn){
+  alert('Please login first to access music');
+  window.location.href = 'login.html';
+}
+</script>
 
-<!-- MAIN CONTENT -->
+<header>
+  <a href="index.html"><img src="file_00000000badc620abf3df2a459d54ba3.png" class="logo"></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="bio.html">Bio</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
+
 <div class="container">
+  <h1>Music</h1>
 
-  <div class="song-card">
-    <h2>Trixx – Am Blesseed (Prod. By Jassie Jozzy)</h2>
-
-    <p>
-      <b>Artist:</b> Muzik Trixx<br>
-      <b>Producer:</b> Jassie Jozzy
-    </p>
-
-    <p>
-      “Am Blesseed” is an Afro-inspired song that talk about gratitude,
-      love, and real-life. The song reflect faith,
-      perseverance, love and blessings even when road hard.
-    </p>
-
-    <!-- AUDIO PREVIEW -->
+  <!-- SONG 1 -->
+  <div class="song">
+    <h3>Trixx - Am Blesseed (Prod.By Jassie Jozzy)</h3>
+    <!-- Preview only -->
     <audio controls>
-      <source src="Trixx - Am Blesseed (Prod.By Jassie Jozzy).mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
+      <source src="Trixx_-_Am_Blesseed_preview.mp3" type="audio/mpeg">
     </audio>
+    <!-- Payhip Button -->
+    <p>Want full download? <a href="https://payhip.com/b/Y1Cn4" target="_blank">Buy Now</a></p>
 
-    <!-- PAYHIP DOWNLOAD LINK -->
-    <a href="https://payhip.com/b/Y1Cn4" target="_blank" class="pay-btn">
-      🔒 Download Full Song (Subscribe & Pay)
-    </a>
+    <!-- Disqus Comments -->
+    <div id="disqus_thread"></div>
+
+    <!-- Share Buttons -->
+    <div class="sharethis-inline-share-buttons"></div>
   </div>
 
+  <!-- Add more songs below same way -->
 </div>
 
-<!-- FOOTER -->
 <footer>
   © 2026 Muzik €mpire | Muzik Trixx
 </footer>
+
+<!-- Scripts for sliders, Disqus & ShareThis -->
+<script>
+  // Disqus setup
+  var disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier = "music-page";
+  };
+  (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=YOUR_PROPERTY_ID&product=inline-share-buttons" async="async"></script>
 
 </body>
 </html>
