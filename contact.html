@@ -26,18 +26,18 @@ body{
   line-height:1.6;
 }
 
-/* NAVBAR */
+/* NAVBAR – ONLY HOME */
 nav{
   background:#fff;
   display:flex;
   justify-content:center;
-  gap:24px;
   padding:16px;
   box-shadow:0 4px 15px rgba(0,0,0,0.08);
   position:sticky;
   top:0;
   z-index:100;
 }
+
 nav a{
   text-decoration:none;
   font-weight:bold;
@@ -70,17 +70,20 @@ nav a:hover{
 .card a:hover{
   text-decoration:underline;
 }
+
+.phone{
+  margin-top:15px;
+  font-size:18px;
+  font-weight:bold;
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAVBAR (ONLY HOME) -->
 <nav>
-  <a href="index.html">Home</a>
-  <a href="music.html">Music</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
+  <a href="index.html">⬅ Home</a>
 </nav>
 
 <!-- CONTENT -->
@@ -94,7 +97,13 @@ nav a:hover{
         muziktrixx@gmail.com
       </a>
     </p>
-    <p>
+
+    <p class="phone">
+      Phone / WhatsApp:<br>
+      <a href="tel:+23276567898">+232 76 567 898</a>
+    </p>
+
+    <p style="margin-top:15px;">
       For bookings, collaborations, and media inquiries.
     </p>
   </div>
