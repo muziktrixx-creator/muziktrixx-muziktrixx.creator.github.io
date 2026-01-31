@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Entertainment News | Muzik €mpire</title>
+<title>News | Muzik €mpire</title>
 
 <style>
 *{
@@ -14,9 +14,9 @@
 
 body{
   font-family:Arial, Helvetica, sans-serif;
-  background:#fff3e0;
+  background:#fdf3ee;
   color:#222;
-  line-height:1.6;
+  line-height:1.7;
 }
 
 /* BACK HOME BUTTON */
@@ -31,38 +31,42 @@ body{
   font-weight:bold;
 }
 
-/* PAGE CONTAINER */
+/* LOGO */
+.logo{
+  display:block;
+  width:120px;
+  margin:10px auto 20px;
+}
+
+/* CONTAINER */
 .container{
   max-width:900px;
   margin:auto;
   padding:20px;
 }
 
-/* HEADER */
+/* CARD */
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.08);
+}
+
+/* HEADINGS */
 h1{
   text-align:center;
-  margin-bottom:30px;
   color:#ff5722;
-}
-
-/* NEWS CARD */
-.news-card{
-  background:#fff;
-  padding:20px;
-  border-radius:16px;
   margin-bottom:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-.news-card h3{
-  margin-bottom:8px;
+h2{
+  margin-top:25px;
+  color:#333;
 }
 
-.news-card small{
-  color:#777;
-}
-
-.news-card p{
+/* TEXT */
+p{
   margin-top:10px;
 }
 
@@ -81,26 +85,34 @@ h1{
 <a href="index.html" class="back-home">⬅ Back Home</a>
 
 <div class="container">
-  <h1>🎬 Entertainment News</h1>
+  <div class="card">
 
-  <div class="news-card">
-    <h3>Muzik Trixx drops new Afro vibes</h3>
-    <small>Posted: 2026</small>
+    <!-- MT LOGO -->
+    <img src="file_00000000badc620abf3df2a459d54ba3.png" alt="Muzik Trixx Logo" class="logo">
+
+    <h1>Entertainment News</h1>
+
+    <h2>🔥 Latest Releases</h2>
     <p>
-      Muzik Trixx continues to push Afro sound with fresh energy,
-      real stories and street-inspired melodies.
+      Stay updated with the newest singles and albums from Muzik Trixx. Every track brings authentic Afro vibes and real-life storytelling.
     </p>
-  </div>
 
-  <div class="news-card">
-    <h3>Upcoming performances & collaborations</h3>
-    <small>Stay tuned</small>
+    <h2>🎵 Collaborations</h2>
     <p>
-      New shows, collaborations and media appearances coming soon.
-      Follow the movement.
+      Find out about Muzik Trixx's latest collaborations with other artists, producers, and upcoming talent in the Afrobeat scene.
     </p>
-  </div>
 
+    <h2>🎤 Events & Performances</h2>
+    <p>
+      Get news about concerts, live performances, and tours. Never miss an opportunity to see Muzik Trixx perform live.
+    </p>
+
+    <h2>💡 Behind the Scenes</h2>
+    <p>
+      Exclusive insights into studio sessions, music video shoots, and personal stories behind the music.
+    </p>
+
+  </div>
 </div>
 
 </body>
