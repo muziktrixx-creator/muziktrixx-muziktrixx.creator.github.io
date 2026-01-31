@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Musique | Muzik €mpire</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Arial, Helvetica, sans-serif; background:#111; color:#fff; }
 
+nav { background: rgba(255,255,255,0.95); padding:16px; display:flex; justify-content:center; gap:22px; position:sticky; top:0; z-index:5; }
+nav a { text-decoration:none; color:#333; font-weight:bold; }
+nav a:hover { color:#ff6f61; }
+
+.language-selector { text-align:center; margin:15px 0; }
+.language-selector a { margin:0 10px; text-decoration:none; font-weight:bold; color:#fff; background:#ff5722; padding:8px 15px; border-radius:15px; }
+.language-selector a:hover { background:#1db954; }
+
+.hero { min-height: calc(100vh - 70px); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:20px; position:relative; z-index:2; background: url("FB_IMG_1748842245284.jpg") center/cover no-repeat; }
+.hero-box { max-width:800px; background: rgba(0,0,0,0.6); padding:35px; border-radius:20px; }
+.hero-box h1 { font-size:3rem; margin-bottom:15px; color:#ff6f61; }
+.hero-box p { font-size:1.2rem; margin-bottom:20px; line-height:1.6; }
+.hero-box a { display:inline-block; padding:14px 30px; margin-top:20px; background:#ff6f61; color:white; border-radius:30px; text-decoration:none; font-weight:bold; }
+.hero-box a:hover { background:#1db954; }
+
+@media(max-width:768px){ .hero-box h1{font-size:2.2rem;} nav{font-size:14px;} }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index-fr.html">Accueil</a>
+  <a href="music-fr.html">Musique</a>
+  <a href="bio-fr.html">Bio</a>
+  <a href="about-fr.html">À Propos</a>
+  <a href="gallery-fr.html">Galerie</a>
+  <a href="news-fr.html">Actualités</a>
+  <a href="contact-fr.html">Contact</a>
+</nav>
+
+<!-- LANGUAGE SELECTOR -->
+<div class="language-selector">
+  <a href="index-en.html">English</a>
+  <a href="index-kr.html">Krio</a>
+  <a href="index-fr.html">Français</a>
+  <a href="index-es.html">Español</a>
+  <a href="index-it.html">Italiano</a>
+  <a href="index-pt.html">Português</a>
+</div>
+
+<!-- HERO / MUSIC CONTENT -->
+<section class="hero">
+  <div class="hero-box">
+    <h1>Musique de <span>Muzik Trixx</span></h1>
+    <p>Écoutez les dernières chansons, remix et hits officiels de Muzik Trixx.</p>
+    <p>Pour écouter et télécharger les musiques, veuillez visiter la section correspondante.</p>
+    <a href="index-fr.html">🏠 Retour à l'Accueil</a>
+  </div>
+</section>
+
+</body>
+</html>
