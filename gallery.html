@@ -3,127 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muzik €mpire | Muzik Trixx</title>
+<title>Gallery | Muzik €mpire</title>
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: Arial, Helvetica, sans-serif; }
-
-/* BACKGROUND SLIDER */
-.slider {
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:100vh;
-  z-index:-2;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-.slide {
-  position:absolute;
-  width:100%; height:100%;
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  animation:slideShow 24s infinite;
-}
-.slide:nth-child(1){background-image:url("FB_IMG_1748842245284.jpg"); animation-delay:0s;}
-.slide:nth-child(2){background-image:url("IMG-20250425-WA0035.jpg"); animation-delay:6s;}
-.slide:nth-child(3){background-image:url("IMG-20250425-WA0039.jpg"); animation-delay:12s;}
-.slide:nth-child(4){background-image:url("IMG-20250425-WA0040.jpg"); animation-delay:18s;}
-@keyframes slideShow {0%{opacity:0;}10%{opacity:1;}30%{opacity:1;}40%{opacity:0;}}
-
-/* OVERLAY */
-.overlay {
-  background: rgba(0,0,0,0.4);
-  min-height:100vh;
-  position: relative;
-  z-index:1;
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:#111;
+  color:#fff;
 }
 
 /* NAVBAR */
-nav {
-  background: rgba(255,255,255,0.95);
-  padding:16px;
+nav{
+  background:#fff;
+  padding:14px;
   display:flex;
   justify-content:center;
-  gap:22px;
+  gap:18px;
   position:sticky;
   top:0;
-  z-index:5;
+  z-index:10;
 }
-nav a { text-decoration:none; color:#333; font-weight:bold; }
-nav a:hover { color:#ff6f61; }
-
-/* HERO */
-.hero {
-  min-height: calc(100vh - 70px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  padding:20px;
-  position:relative;
-  z-index:2;
-}
-.hero-box { max-width:800px; }
-.hero h1 { font-size:3rem; margin-bottom:15px; }
-.hero h1 span { color:#ff6f61; }
-.hero p { font-size:1.2rem; margin-bottom:30px; }
-.hero a {
-  display:inline-block;
-  padding:14px 30px;
-  margin:10px;
-  background:#ff6f61;
-  color:white;
-  border-radius:30px;
+nav a{
   text-decoration:none;
+  color:#333;
   font-weight:bold;
 }
-.hero a.secondary { background:#1db954; }
+nav a:hover{
+  color:#ff6f61;
+}
+
+/* SECTION TITLE */
+.section-title{
+  text-align:center;
+  margin:25px 0 10px;
+  font-size:1.4rem;
+}
+
+/* HINT TEXT */
+.hint{
+  text-align:center;
+  font-size:0.9rem;
+  color:#ccc;
+  margin-bottom:12px;
+}
+
+/* HORIZONTAL SCROLL */
+.scroll-row{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  padding:10px 15px 20px;
+  scroll-snap-type:x mandatory;
+}
+.scroll-row::-webkit-scrollbar{
+  height:6px;
+}
+.scroll-row::-webkit-scrollbar-thumb{
+  background:#555;
+  border-radius:10px;
+}
+
+/* PHOTOS */
+.photo-card{
+  flex:0 0 auto;
+  scroll-snap-align:start;
+}
+.photo-card img{
+  height:220px;
+  width:auto;
+  border-radius:12px;
+}
+
+/* VIDEOS */
+.video-card{
+  flex:0 0 auto;
+  scroll-snap-align:start;
+}
+.video-card video{
+  height:220px;
+  border-radius:12px;
+  background:#000;
+}
 
 /* MOBILE */
 @media(max-width:768px){
-  .hero h1{font-size:2.2rem;}
-  .hero p{font-size:1rem;}
-  nav{font-size:14px;}
+  .photo-card img,
+  .video-card video{
+    height:180px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- BACKGROUND SLIDER -->
-<div class="slider">
-  <div class="slide"></div>
-  <div class="slide"></div>
-  <div class="slide"></div>
-  <div class="slide"></div>
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="music.html">Music</a>
+  <a href="bio.html">Bio</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- PHOTOS SECTION -->
+<h2 class="section-title">📸 Photos</h2>
+<p class="hint">👈 Swipe left or right to view photos</p>
+
+<div class="scroll-row">
+  <div class="photo-card">
+    <img src="FB_IMG_1748842245284.jpg" alt="Photo 1">
+  </div>
+  <div class="photo-card">
+    <img src="IMG-20250425-WA0035.jpg" alt="Photo 2">
+  </div>
+  <div class="photo-card">
+    <img src="IMG-20250425-WA0039.jpg" alt="Photo 3">
+  </div>
+  <div class="photo-card">
+    <img src="IMG-20250425-WA0040.jpg" alt="Photo 4">
+  </div>
 </div>
 
-<div class="overlay">
+<!-- VIDEOS SECTION -->
+<h2 class="section-title">🎬 Videos</h2>
+<p class="hint">👇 Scroll down, then swipe to watch videos</p>
 
-  <!-- NAVBAR -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="music.html">Music</a>
-    <a href="bio.html">Bio</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<div class="scroll-row">
+  <div class="video-card">
+    <video controls>
+      <source src="441-_Baby_its_you__OFFICIAL_VIDEO_HD_(360p).mp4" type="video/mp4">
+    </video>
+  </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-box">
-      <h1>Welcome to <span>Muzik €mpire</span></h1>
-      <p>
-        Official home of <b>Muzik Trixx</b> — Afro vibes, real stories, and pure energy.
-        Where hustle meets melody and music speaks life.
-      </p>
-      <a href="music.html">🎵 Listen Now</a>
-      <a href="gallery.html" class="secondary">📸 View Gallery</a>
-    </div>
-  </section>
+  <div class="video-card">
+    <video controls>
+      <source src="441,_Kontri_Boss_ft_L.A.J_-_Uwabiye_Remix_(360p).mp4" type="video/mp4">
+    </video>
+  </div>
 
+  <div class="video-card">
+    <video controls>
+      <source src="From_your_...(720p).mp4" type="video/mp4">
+    </video>
+  </div>
 </div>
 
 </body>
-</html>
+  </html>
