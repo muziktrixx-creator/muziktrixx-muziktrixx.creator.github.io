@@ -6,13 +6,6 @@
 <title>Bio | Muzik €mpire</title>
 
 <style>
-:root{
-  --bg:#f7fbff;        /* soft light background */
-  --card:#ffffff;
-  --accent:#ff6f61;    /* warm accent */
-  --text:#222;
-}
-
 *{
   margin:0;
   padding:0;
@@ -20,121 +13,100 @@
 }
 
 body{
-  font-family:Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.8;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#fdf3ee;
+  color:#222;
+  line-height:1.7;
 }
 
-/* NAVIGATION */
-nav{
-  background:#ffffff;
-  display:flex;
-  justify-content:center;
-  gap:22px;
-  padding:16px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.08);
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-
-nav a{
+/* BACK HOME BUTTON */
+.back-home{
+  display:inline-block;
+  margin:20px;
+  padding:10px 18px;
+  background:#ff5722;
+  color:#fff;
   text-decoration:none;
+  border-radius:20px;
   font-weight:bold;
-  color:#333;
-}
-
-nav a:hover{
-  color:var(--accent);
 }
 
 /* CONTAINER */
 .container{
   max-width:900px;
   margin:auto;
-  padding:60px 20px;
-  text-align:center;
+  padding:20px;
 }
 
+/* CARD */
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.08);
+}
+
+/* HEADINGS */
 h1{
-  margin-bottom:40px;
-  font-size:2.5rem;
-}
-
-/* BIO CARD */
-.bio-card{
-  background:var(--card);
-  padding:40px;
-  border-radius:22px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.1);
-  animation:fadeIn 1s ease;
-}
-
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-/* PROFILE IMAGE */
-.bio-card img{
-  width:200px;
-  height:200px;
-  border-radius:50%;
-  object-fit:cover;
-  border:6px solid var(--accent);
-  margin-bottom:25px;
-}
-
-/* TEXT */
-.bio-card h2{
-  color:var(--accent);
+  text-align:center;
+  color:#ff5722;
   margin-bottom:20px;
 }
 
-.bio-card p{
-  font-size:18px;
+h2{
+  margin-top:25px;
+  color:#333;
+}
+
+/* TEXT */
+p{
+  margin-top:10px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .container{
+    padding:15px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="music.html">Music</a>
-  <a href="news.html">News</a>
-  <a href="about.html">Bio</a>
-  <a href="contact.html">Contact</a>
-  <a href="gallery.html">Gallery</a>
-</nav>
+<!-- BACK TO HOME -->
+<a href="index.html" class="back-home">⬅ Back Home</a>
 
 <div class="container">
-  <h1>Artist Bio</h1>
-
-  <div class="bio-card">
-    <img src="file_00000000badc620abf3df2a459d54ba3.png" alt="Muzik Trixx">
-
-    <h2>Muzik Trixx</h2>
+  <div class="card">
+    <h1>🎤 Muzik Trixx</h1>
 
     <p>
-      Muzik Trixx is an Afro artist driven by real-life experiences, passion, and the hunger to rise.
-      His sound blends Afro rhythms with deep, relatable lyrics inspired by love, hustle, gratitude,
-      and personal growth.
+      Muzik Trixx na Afro-inspired artist wae dae represent real life,
+      hustle, pain, growth and victory. E music dae talk truth —
+      from street to spotlight.
     </p>
 
+    <h2>🔥 The Journey</h2>
     <p>
-      Born from the vision of building something bigger than music, <strong>MUZIK €MPIRE</strong>
-      represents a movement — creativity, consistency, and self-belief. With every release, Muzik Trixx
-      continues to evolve, connecting with listeners who feel the story behind the sound.
+      From humble beginnings to building a sound wae get meaning,
+      Muzik Trixx dae use music as voice for motivation, struggle,
+      love and self-belief.
     </p>
 
+    <h2>🎶 The Sound</h2>
     <p>
-      From Sierra Leone to the world, Muzik Trixx is focused on impact, originality, and leaving a
-      lasting mark in the Afro music space.
+      Afro vibes, melodic hooks, deep lyrics and raw energy.
+      Music wae you fit feel, not just hear.
+    </p>
+
+    <h2>🚀 The Vision</h2>
+    <p>
+      To inspire the next generation, push African sound globally
+      and create a movement where hustle meets melody.
     </p>
   </div>
 </div>
 
 </body>
-  </html>
+</html>
